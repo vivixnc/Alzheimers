@@ -12,7 +12,7 @@ clock = pygame.time.Clock()
 #David1 = pygame.image.load('david1.png')
 #gameDisplay.blit(David1, (x,y))
 
-font1 = pygame.font.SysFont("Fixedsys", 28)
+font1 = pygame.font.SysFont("Fixedsys", 40)
 title = font1.render("Alzheimer's", True, (76, 0, 153))
 
 done = False
