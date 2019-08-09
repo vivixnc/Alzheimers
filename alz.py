@@ -32,9 +32,7 @@ while not done:
         screen.blit(start, ((500 - start.get_width()) // 2, (600 - start.get_height()) // 2 + 30))
         pygame.display.flip()
         clock.tick(60)
-
-    if(scene == 0.0 and event.type == pygame.MOUSEBUTTONUP):
-        scene = 0.1
+    if(scene == 0.0 and event.type == pygame.MOUSEBUTTONDOWN):
         screen.fill((0, 0, 0))
         act1 = font1.render("ACT ONE", True, (255, 255, 255))
         mid = font1.render("MID (2 YEARS)", True, (255, 255, 255))
@@ -42,3 +40,11 @@ while not done:
         pygame.draw.line(screen, (255, 255, 255), (150, 320), (350, 320), 1)
         screen.blit(mid, ((500 - mid.get_width()) // 2, (600 - act1.get_height()) // 2 + 50))
         pygame.display.flip()
+        scene = 0.1
+    if(scene == 0.1 and event.type == pygame.MOUSEBUTTONDOWN):
+        scene = 1.0
+        screen.fill((0, 0, 0))
+        pygame.draw.rect(screen, (20, 0, 56), (0, 350, 500, 700), 0)
+        pygame.display.flip()
+        scene = 1.1
+
