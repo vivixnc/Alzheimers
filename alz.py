@@ -5,7 +5,6 @@ pygame.init()
 screen = pygame.display.set_mode((500,650))
 pygame.display.set_caption("Alzhemier's")
 clock = pygame.time.Clock()
-act = pygame.event.get()
 
 # inserting image
 #David1 = pygame.image.load('david1.png')
@@ -38,6 +37,8 @@ while not done:
         scene = 0.1
         screen.fill((0, 0, 0))
         act1 = font1.render("ACT ONE", True, (255, 255, 255))
+        mid = font1.render("MID (2 YEARS)", True, (255, 255, 255))
         screen.blit(act1, ((500 - act1.get_width()) // 2, (600 - act1.get_height()) // 2))
-        
+        pygame.draw.line(screen, (255, 255, 255), (150, 320), (350, 320), 1)
+        screen.blit(mid, ((500 - mid.get_width()) // 2, (600 - act1.get_height()) // 2 + 50))
         pygame.display.flip()
