@@ -12,8 +12,12 @@ clock = pygame.time.Clock()
 #David1 = pygame.image.load('david1.png')
 #gameDisplay.blit(David1, (x,y))
 
-font1 = pygame.font.SysFont("Fixedsys", 40)
-title = font1.render("Alzheimer's", True, (76, 0, 153))
+# Fonts
+font1 = pygame.font.SysFont("Monospace", 30)
+font2 = pygame.font.SysFont("Monospace", 20)
+
+title = font1.render("Alzheimer's", True, (56, 0, 113))
+start = font2.render("press space to continue", True, (56, 0, 113))
 
 done = False
 
@@ -26,5 +30,6 @@ while not done:
 
     screen.fill((0, 0, 0))
     screen.blit(title, ((500 - title.get_width()) // 2, (600 - title.get_height()) // 2))
-
+    screen.blit(start, ((500 - start.get_width()) // 2, (600 - start.get_height()) // 2 + 30))
     pygame.display.flip()
+    clock.tick(60)
