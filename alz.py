@@ -1,6 +1,7 @@
 import pygame
 import sys
-
+# music link: https://www.soundjay.com/communication-sounds.html
+# its the second one:)
 # setting up window
 pygame.init()
 screen = pygame.display.set_mode((500,650))
