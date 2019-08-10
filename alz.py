@@ -2,12 +2,12 @@ import pygame
 import sys
 # music link: https://www.soundjay.com/communication-sounds.html
 # its the second one:)
+
 # setting up window
 pygame.init()
 screen = pygame.display.set_mode((500,650))
 pygame.display.set_caption("Alzhemier's")
 clock = pygame.time.Clock()
-mousePos = pygame.mouse.get_pos()
 
 # inserting image
 #David1 = pygame.image.load('david1.png')
@@ -62,13 +62,14 @@ while not done:
             done = True
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             done = True
-
+    # continuosly updates position of the cursor
+    mousePos = pygame.mouse.get_pos()
     # opening title screen
     if(scene == 0.0):
         screen.fill((0, 0, 0))
         screen.blit(title, ((500 - title.get_width()) // 2, (600 - title.get_height()) // 2))
         screen.blit(start, ((500 - start.get_width()) // 2, (600 - start.get_height()) // 2 + 30))
-        pygame.display.flip()
+        pygame.display.update()
 
     # when the user clicks opening screen
     # act 1 opening screen appears
@@ -79,7 +80,7 @@ while not done:
         screen.blit(act1, ((500 - act1.get_width()) // 2, (600 - act1.get_height()) // 2))
         pygame.draw.line(screen, (255, 255, 255), (150, 320), (350, 320), 1)
         screen.blit(mid, ((500 - mid.get_width()) // 2, (600 - act1.get_height()) // 2 + 50))
-        pygame.display.flip()
+        pygame.display.update()
         scene = 1.0
 
     # first scene of act one
@@ -89,7 +90,7 @@ while not done:
         # drawing textbox
         pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
         screen.blit(david, (30, 420))
-        pygame.display.flip()
+        pygame.display.update()
 
         # printing text
         dialogue("Mom, let's go to the doctor to check up on your health. I've noticed your memory has been a little off lately......")
@@ -111,17 +112,17 @@ while not done:
         screen.blit(no1, (300, 560))
         screen.blit(no2, (295, 580))
         screen.blit(no3, (330, 600))
-        pygame.display.flip()
+        pygame.display.update()
+        scene= 1.01
 
     # what happens when the player chooses yes
-    if scene == 1.0 and yes.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 1.01 and yes.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
         screen.fill((255, 0, 0))
-        pygame.display.flip()
+        pygame.display.update()
         scene = 1.1
 
     # what happens when the player chooses no
-    if scene == 1.0 and no.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 1.01 and no.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
         screen.fill((0, 255, 0))
-        pygame.display.flip()
+        pygame.display.update()
         scene = 1.1
-
