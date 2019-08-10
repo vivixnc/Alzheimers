@@ -1,11 +1,12 @@
 import pygame
-
+import sys
 
 # setting up window
 pygame.init()
 screen = pygame.display.set_mode((500,650))
 pygame.display.set_caption("Alzhemier's")
 clock = pygame.time.Clock()
+mousePos = pygame.mouse.get_pos()
 
 # inserting image
 #David1 = pygame.image.load('david1.png')
@@ -15,16 +16,32 @@ clock = pygame.time.Clock()
 font1 = pygame.font.SysFont("Monospace", 30)
 font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
+
+# sets scene to 0
 scene = 0.0
+
+# words for opening page
 title = font1.render("Alzheimer's", True, (56, 0, 113))
 start = font2.render("click anywhere to continue", True, (56, 0, 113))
+
+# instantiating names for dialogue
 david = font2.render("David: ", True, (255, 255, 255))
 kristyanne = font2.render("Kristy-Anne: ", True, (255, 255, 255))
+
+# making yes and no buttons for act one scene 1
+yes = pygame.Rect(75, 550, 150, 80)
+no = pygame.Rect(275, 550, 150, 80)
+
 done = False
 
 def dialogue(line):
+    pygame.mixer.pre_init(44100, 16, 2, 4096)
+    pygame.mixer.init()
+    pygame.mixer.music.load("computer-keyboard-2.wav")
+    pygame.mixer.music.set_volume(0.08)
+    pygame.mixer.music.play(-1)
     x = 40
-    y = 400
+    y = 450
     i = 0
     for i in range (len(line)):
         if(x >= 450 and line[i] == " "):
@@ -36,6 +53,7 @@ def dialogue(line):
         screen.blit(letter, (x, y))
         pygame.display.flip()
         pygame.time.wait(30)
+    pygame.mixer.music.stop()
 
 while not done:
     for event in pygame.event.get():
@@ -62,9 +80,35 @@ while not done:
 
     if(scene == 1.0 and event.type == pygame.MOUSEBUTTONDOWN):
         screen.fill((0, 0, 0))
-        pygame.draw.rect(screen, (20, 0, 56), (0, 350, 500, 700), 0)
-        scene = 1.1
-        screen.blit(david, (30, 370))
+        pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+        screen.blit(david, (30, 420))
         pygame.display.flip()
-        dialogue("Mom, let's go to the doctor to check up on your health. I've noticed your memory has been a little off lately.")
+        dialogue("Mom, let's go to the doctor to check up on your health. I've noticed your memory has been a little off lately......")
+        #yes = pygame.rect(screen, (0, 0, 0), (50, 550, 100, 50), 0)
+        #pygame.draw.rect(yes)
+        pygame.draw.rect(screen, [0, 0, 0], yes)
+        pygame.draw.rect(screen, [0, 0, 0], no)
+        yes1 = font3.render("yes, i should", True, (255, 255, 255))
+        yes2 = font3.render("probably get it", True, (255, 255, 255))
+        yes3 = font3.render("checked :/", True, (255, 255, 255))
+        screen.blit(yes1, (85, 560))
+        screen.blit(yes2, (85, 580))
+        screen.blit(yes3, (85, 600))
+        no1 = font3.render("no, i'm not", True, (255, 255, 255))
+        no2 = font3.render("going insane", True, (255, 255, 255))
+        no3 = font3.render(">:(", True, (255, 255, 255))
+        screen.blit(no1, (300, 560))
+        screen.blit(no2, (295, 580))
+        screen.blit(no3, (330, 600))
+        pygame.display.flip()
+
+    if scene == 1.0 and yes.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        screen.fill((255, 0, 0))
+        pygame.display.flip()
+        scene = 1.1
+
+    if scene == 1.0 and no.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        screen.fill((0, 255, 0))
+        pygame.display.flip()
+        scene = 1.1
 
