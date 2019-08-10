@@ -62,12 +62,15 @@ while not done:
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             done = True
 
+    # opening title screen
     if(scene == 0.0):
         screen.fill((0, 0, 0))
         screen.blit(title, ((500 - title.get_width()) // 2, (600 - title.get_height()) // 2))
         screen.blit(start, ((500 - start.get_width()) // 2, (600 - start.get_height()) // 2 + 30))
         pygame.display.flip()
 
+    # when the user clicks opening screen
+    # act 1 opening screen appears
     if(scene == 0.0 and event.type == pygame.MOUSEBUTTONUP):
         screen.fill((0, 0, 0))
         act1 = font1.render("ACT ONE", True, (255, 255, 255))
@@ -78,16 +81,23 @@ while not done:
         pygame.display.flip()
         scene = 1.0
 
+    # first scene of act one
     if(scene == 1.0 and event.type == pygame.MOUSEBUTTONDOWN):
         screen.fill((0, 0, 0))
+
+        # drawing textbox
         pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
         screen.blit(david, (30, 420))
         pygame.display.flip()
+
+        # printing text
         dialogue("Mom, let's go to the doctor to check up on your health. I've noticed your memory has been a little off lately......")
-        #yes = pygame.rect(screen, (0, 0, 0), (50, 550, 100, 50), 0)
-        #pygame.draw.rect(yes)
+
+        # drawing yes and no buttons (box only)
         pygame.draw.rect(screen, [0, 0, 0], yes)
         pygame.draw.rect(screen, [0, 0, 0], no)
+
+        # rendering and printing button text
         yes1 = font3.render("yes, i should", True, (255, 255, 255))
         yes2 = font3.render("probably get it", True, (255, 255, 255))
         yes3 = font3.render("checked :/", True, (255, 255, 255))
@@ -102,11 +112,13 @@ while not done:
         screen.blit(no3, (330, 600))
         pygame.display.flip()
 
+    # what happens when the player chooses yes
     if scene == 1.0 and yes.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
         screen.fill((255, 0, 0))
         pygame.display.flip()
         scene = 1.1
 
+    # what happens when the player chooses no
     if scene == 1.0 and no.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
         screen.fill((0, 255, 0))
         pygame.display.flip()
