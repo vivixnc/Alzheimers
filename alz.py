@@ -1,7 +1,5 @@
 import pygame
 import sys
-# music link: https://www.soundjay.com/communication-sounds.html
-# its the second one:)
 
 # setting up window
 pygame.init()
@@ -25,13 +23,17 @@ scene = 0.0
 title = font1.render("Alzheimer's", True, (56, 0, 113))
 start = font2.render("click anywhere to continue", True, (56, 0, 113))
 
-# instantiating names for dialogue
+# instantiating names for dialogue, **colors are subject to change**
+you = font2.render("You: ", True, (255, 255, 255))
 david = font2.render("David: ", True, (255, 255, 255))
 kristyanne = font2.render("Kristy-Anne: ", True, (255, 255, 255))
+doctor = font2.render("Dr. Pineapple: ", True, (255, 255, 255))
 
 # making yes and no buttons for act one scene 1
-yes = pygame.Rect(75, 550, 150, 80)
-no = pygame.Rect(275, 550, 150, 80)
+yesDoc = pygame.Rect(75, 550, 150, 80)
+noDoc = pygame.Rect(275, 550, 150, 80)
+yesTurn = pygame.Rect(100, 550, 130, 50)
+noTurn = pygame.Rect(300, 550, 130, 50)
 
 done = False
 
@@ -45,7 +47,7 @@ def dialogue(line):
     y = 450
     i = 0
     for i in range (len(line)):
-        if(x >= 450 and line[i] == " "):
+        if(x >= 450 and line[i-1] == " "):
             x = 40
             y += 30
         else:
@@ -96,8 +98,8 @@ while not done:
         dialogue("Mom, let's go to the doctor to check up on your health. I've noticed your memory has been a little off lately......")
 
         # drawing yes and no buttons (box only)
-        pygame.draw.rect(screen, [0, 0, 0], yes)
-        pygame.draw.rect(screen, [0, 0, 0], no)
+        pygame.draw.rect(screen, [0, 0, 0], yesDoc)
+        pygame.draw.rect(screen, [0, 0, 0], noDoc)
 
         # rendering and printing button text
         yes1 = font3.render("yes, i should", True, (255, 255, 255))
@@ -116,13 +118,60 @@ while not done:
         scene= 1.01
 
     # what happens when the player chooses yes
-    if scene == 1.01 and yes.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
-        screen.fill((255, 0, 0))
+    # diagnosis
+    if scene == 1.01 and yesDoc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+        screen.blit(doctor, (30, 420))
         pygame.display.update()
-        scene = 1.1
+        dialogue("I am sorry to inform you that your mother has been diagnosed with Alzheimer's.")
+        scene = 1.11
+    # medication
+    if scene == 1.11 and event.type == pygame.MOUSEBUTTONDOWN:
+        pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+        screen.blit(doctor, (30, 420))
+        pygame.display.update()
+        dialogue("However, you are lucky to have gotten an early diagnosis. Although there is no cure for Alzheimer's, we have medication ready for you. Please be sure to take it twice, daily")
+        scene = 1.111
+    # leaving doctor's office
+    if scene == 1.111 and event.type == pygame.MOUSEBUTTONUP:
+        pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+        screen.blit(david, (30, 420))
+        pygame.display.update()
+        dialogue("Alright, thank you.")
+        scene = 1.1111
+    # car scene/going home
+    if scene == 1.1111 and event.type == pygame.MOUSEBUTTONDOWN:
+        pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+        screen.blit(you, (30, 420))
+        pygame.display.update()
+        dialogue("*did David miss a turn?*")
+        pygame.draw.rect(screen, (0, 0, 0), yesTurn)
+        pygame.draw.rect(screen, (0, 0, 0), noTurn)
+        y = font2.render("yes", True, (255, 255, 255))
+        n = font2.render("no", True, (255, 255, 255))
+        screen.blit(y, (150, 560))
+        screen.blit(n, (355, 560))
+        pygame.display.update()
+        scene = 1.11111
+    # if user says there was a turn
+    if scene == 1.11111 and yesTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+        screen.blit(you, (30, 420))
+        pygame.display.update()
+        dialogue("David, I think you missed a turn")
+        scene = 1.111111
+    # david's response to the comment
+    if scene == 1.111111 and event.type == pygame.MOUSEBUTTONDOWN:
+        pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+        screen.blit(david, (30, 420))
+        pygame.display.update()
+        dialogue("No, mom, it's  the next turn")
+        scene = 1.2
+    # if user says there wasn't a turn
+    if scene == 1.11111 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        scene = 1.2
 
     # what happens when the player chooses no
-    if scene == 1.01 and no.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
-        screen.fill((0, 255, 0))
-        pygame.display.update()
-        scene = 1.1
+    if scene == 1.01 and noDoc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        scene = 1.2
+
