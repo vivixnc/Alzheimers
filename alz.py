@@ -1,6 +1,7 @@
 import pygame
 import sys
-
+# https://www.soundjay.com/communication-sounds.html 
+# second track
 # setting up window
 pygame.init()
 screen = pygame.display.set_mode((500,650))
@@ -93,7 +94,6 @@ while not done:
         pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
         screen.blit(david, (30, 420))
         pygame.display.update()
-
         # printing text
         dialogue("Mom, let's go to the doctor to check up on your health. I've noticed your memory has been a little off lately......")
 
@@ -116,7 +116,6 @@ while not done:
         screen.blit(no3, (330, 600))
         pygame.display.update()
         scene= 1.01
-
     # what happens when the player chooses yes
     # diagnosis
     if scene == 1.01 and yesDoc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
@@ -152,26 +151,33 @@ while not done:
         screen.blit(y, (150, 560))
         screen.blit(n, (355, 560))
         pygame.display.update()
-        scene = 1.11111
+        scene = 1.111111
     # if user says there was a turn
-    if scene == 1.11111 and yesTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 1.111111 and yesTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
         pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
         screen.blit(you, (30, 420))
         pygame.display.update()
         dialogue("David, I think you missed a turn")
-        scene = 1.111111
+        scene = 1.1111111
     # david's response to the comment
-    if scene == 1.111111 and event.type == pygame.MOUSEBUTTONDOWN:
+    if scene == 1.1111111 and event.type == pygame.MOUSEBUTTONDOWN:
         pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
         screen.blit(david, (30, 420))
         pygame.display.update()
         dialogue("No, mom, it's  the next turn")
         scene = 1.2
     # if user says there wasn't a turn
-    if scene == 1.11111 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 1.111111 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+        pygame.display.update()
+        dialogue("David knows the way home.")
         scene = 1.2
 
     # what happens when the player chooses no
-    if scene == 1.01 and noDoc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 1.01 and noDoc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
         scene = 1.2
 
+    if scene == 1.2 and event.type == pygame.MOUSEBUTTONDOWN:
+        pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+        screen.blit(you, (30, 420))
+        pygame.display.update()
