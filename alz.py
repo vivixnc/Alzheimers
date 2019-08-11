@@ -165,3 +165,43 @@ while not done:
     if scene == 1.21 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Did you name a cactus after me?", david)
         scene = 1.22
+
+    if scene == 1.22 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("...no...", you)
+        scene = 1.23
+
+    if scene == 1.23 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh, I found your book by the way.", david)
+        scene = 1.24
+
+    if scene == 1.24 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("What book?", you)
+        scene = 1.25
+
+    if scene == 1.25 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("The one you asked me to find...", david)
+        scene = 1.26
+
+    if scene == 1.26 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("That's great! Where was it?", you)
+        scene = 1.27
+
+    if scene == 1.27 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("In the garden, you left it there.", david)
+        scene = 1.28
+
+    if scene == 1.28 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Oh, that's odd...", you)
+        scene = 1.29
+
+    if scene == 1.29 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Mom, what's that smell?", david)
+        scene = 1.211
+
+    if scene == 1.211 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I don't know...wait, did i water David.jr yet?", you)
+        scene = 1.212
+
+    if scene == 1.212 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Yes, mom. You just did.", david)
+        scene = 1.3
