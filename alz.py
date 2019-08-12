@@ -146,11 +146,11 @@ while not done:
         scene = 1.111111
     # if user says there was a turn
     if scene == 1.111111 and yesTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
-        dialogue("David, I think you missed a turn", you)
+        dialogue("David, I think you missed a turn.", you)
         scene = 1.1111111
     # david's response to the comment
     if scene == 1.1111111 and event.type == pygame.MOUSEBUTTONDOWN:
-        dialogue("No, mom, it's  the next turn", david)
+        dialogue("No, mom, it's  the next turn.", david)
         scene = 1.11111111
     if scene == 1.11111111 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Oh, I'm sorry :(", you)
@@ -160,7 +160,7 @@ while not done:
         dialogue("David, how much longer until we're home?", you)
         scene = 1.1111111111
     if scene == 1.1111111111 and event.type == pygame.MOUSEBUTTONUP:
-        dialogue("About 5 more minutes", david)
+        dialogue("About 5 more minutes.", david)
         scene = 1.2
 
     # what happens when the player chooses no
@@ -358,7 +358,7 @@ while not done:
 
     # alarm scene
     if scene == 1.6 and event.type == pygame.MOUSEBUTTONDOWN:
-        dialogue("BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP", thought)
+        dialogue("BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP", thought)
         scene = 1.61
 
     if scene == 1.61 and event.type == pygame.MOUSEBUTTONUP:
@@ -393,7 +393,11 @@ while not done:
 
     if doctor1 == True and scene == 1.6411 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("I will.", you)
-        scene = 2
+        scene = 1.651
+
+    if doctor1 == True and scene == 1.651 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Thank you, mom.", david)
+        scene = 1.7
 
     # doctor: yes    Stove: no
     if doctor1 == True and scene == 1.642:
@@ -418,7 +422,11 @@ while not done:
 
     if scene == 1.64211111 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Ok.", you)
-        scene = 2
+        scene = 1.652
+
+    if scene == 1.652 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Thank you, mom.", david)
+        scene = 1.7
 
     # doctor: no    stove: yes
     if doctor1 == False and scene == 1.641:
@@ -476,7 +484,7 @@ while not done:
         scene = 1.65111
 
     if scene == 1.65111 and event.type == pygame.MOUSEBUTTONDOWN:
-        dialogue("David is driving us home...*did David miss a turn?*", thought)
+        dialogue("David is driving us home... *did David miss a turn?*", thought)
         pygame.draw.rect(screen, (0, 0, 0), yesTurn)
         pygame.draw.rect(screen, (0, 0, 0), noTurn)
         y = font2.render("yes", True, (255, 255, 255))
@@ -487,12 +495,12 @@ while not done:
         scene = 1.651111
 
     if scene == 1.651111 and yesTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
-        dialogue("David, I think you missed a turn", you)
+        dialogue("David, I think you missed a turn.", you)
         scene = 1.6511111
 
     if scene == 1.6511111 and event.type == pygame.MOUSEBUTTONDOWN:
-        dialogue("David ignores me", thought)
-        scene = 2
+        dialogue("David ignores me...", thought)
+        scene = 1.7
 
     if scene == 1.651111 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
         dialogue("David, how much longer until we’re home?", you)
@@ -500,26 +508,37 @@ while not done:
 
     if scene == 1.6511111 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("About 5 more minutes.", david)
+        scene = 1.7
+
+    if scene == 1.7 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David and Kristy-Anne get married two years after meeting each other. They are so wonderful together, and I’m very happy for my son :)", thought)
+        scene == 1.71
+
+    if scene == 1.71 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("David’s life is the brightest it’s ever been and will only continue to be brighter. My days, on the other hand, only seem to get darker…", thought)
         scene = 2
 
+    # ACT2 OPENING
     if scene == 2 and event.type == pygame.MOUSEBUTTONUP:
-        dialogue("David and Kristy-Anne get married two years after meeting each other. They are so wonderful together, and I’m very happy for my son :)", thought)
-        scene == 2.01
-
-    if scene == 2.01 and event.type == pygame.MOUSEBUTTONDOWN:
-        dialogue("David’s life is the brightest it’s ever been and will only continue to be brighter. My days, on the other hand, only seem to get darker…", thought)
+        screen.fill((0, 0, 0))
+        act2 = font1.render("ACT TWO", True, (255, 255, 255))
+        moderate = font1.render("MODERATE (5 YEARS)", True, (255, 255, 255))
+        screen.blit(act1, ((500 - act2.get_width()) // 2, (600 - act2.get_height()) // 2))
+        pygame.draw.line(screen, (255, 255, 255), (150, 320), (350, 320), 1)
+        screen.blit(mid, ((500 - moderate.get_width()) // 2, (600 - act2.get_height()) // 2 + 50))
+        pygame.display.update()
         scene = 2.1
-        
+
     # ACT2SCENE1(2.1)
-    
+
     # ACT2SCENE2(2.2)
-    
+
     # ACT2SCENE3(2.3)
-    
+
     # ACT2SCENE4(2.4)
-    
+
     # ACT2SCENE5(2.5)
-    
+
     # ACT2SCENE6(2.6)
-    
+
     # ACT2SCENE7(2.7)
