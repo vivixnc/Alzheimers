@@ -528,17 +528,20 @@ while not done:
         screen.blit(mid, ((500 - moderate.get_width()) // 2, (600 - act2.get_height()) // 2 + 50))
         pygame.display.update()
         scene = 2.1
+    # MOUSEBUTTONS ARE SUBJECT TO CHANGE
+    # ACT2SCENE1(2.1)(SHANNI)
 
-    # ACT2SCENE1(2.1)
-
-    # ACT2SCENE2(2.2)
+    # ACT2SCENE2(2.2)(SHANNI)
 
     # ACT2SCENE3(2.3)
 
-    # ACT2SCENE4(2.4)
+    # ACT2SCENE4(2.4)(VIVIAN)
+    if scene == 2.4 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Kristy-Anne! Could you come to my room for a bit?", you)
+        scene = 2.41
+    
+    # ACT2SCENE5(2.5)(VIVIAN)
 
-    # ACT2SCENE5(2.5)
+    # ACT2SCENE6(2.6)(SEONGA)
 
-    # ACT2SCENE6(2.6)
-
-    # ACT2SCENE7(2.7)
+    # ACT2SCENE7(2.7)(SEONGA)
