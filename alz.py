@@ -539,6 +539,61 @@ while not done:
     if scene == 2.4 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Kristy-Anne! Could you come to my room for a bit?", you)
         scene = 2.41
+    if scene == 2.41 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("After a couple of minutes after I call her name, I hear the door to the bedroom creak open.", thought)
+        scene = 2.42
+    if scene == 2.42 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Yes, mother?", kristyanne)
+        scene = 2.43
+    if scene == 2.43 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Over here, in the closet.", you)
+        scene = 2.44
+    if scene == 2.44 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("What are you doing here, mother?", kristyanne)
+        scene == 2.45
+    if scene == 2.45 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Mmm… I didn’t want to ask David… but could you help me choose out some clothes for the day? I’m not sure what to wear…", you)
+        scene = 2.46
+    if scene == 2.46 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh, of course I can.", kristyanne)
+        scene = 2.47
+    if scene == 2.47 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("After a few minutes of her rummaging through my closet, she sets down an outfit on my bed.", thought)
+        scene = 2.48
+    if scene == 2.48 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh! It’s wonderful! Thank you so much, dear.", you)
+        scene = 2.49
+    if scene == 2.49 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Don’t mention it. Would you like me to do this everyday from now on?", kristyanne)
+        pygame.draw.rect(screen, (0, 0, 0), yesHelp)
+        pygame.draw.rect(screen, (0, 0, 0), noHelp)
+        yh = font3.render("yes", True, (255, 255, 255))
+        nh = font3.render("no", True, (255, 255, 255))
+        screen.blit(yh, (120, 560))
+        screen.blit(nh, (325, 560))
+        pygame.display.update()
+        scene = 2.411
+    if scene == 2.411 and yesHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Ok, I can do that.", kristyanne)
+        scene == 2.4111
+    if scene == 2.4111 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Kristy-Anne at your service ;)", kristyanne)
+        scene = 2.413
+    if scene == 2.411 and yesHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I insist, mother. Please? It’ll be easier than asking me everyday if I just do it myself.", you)
+        scene = 2.4112
+    if scene == 2.4112 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Are you sure it won’t be too much trouble?", you)
+        scene = 2.41122
+    if scene == 2.41122 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("It won’t. I’ll take that as a yes!", kristyanne)
+        scene == 2.413
+    if scene == 2.413 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Thank you, Kristy-Anne.", you)
+        scene = 2.414
+    if scene == 2.414 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("It’s the least I can do.", kristyanne)
+        scene = 2.5
     
     # ACT2SCENE5(2.5)(VIVIAN)
 
