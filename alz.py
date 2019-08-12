@@ -220,9 +220,9 @@ while not done:
         pygame.draw.rect(screen, (0, 0, 0), claire)
         pygame.draw.rect(screen, (0, 0, 0), catherine)
         cl = font2.render("Claire", True, (255, 255, 255))
-        ca = font2.render("Cathehrine", True, (255, 255, 255))
+        ca = font2.render("Catherine", True, (255, 255, 255))
         screen.blit(cl, (130, 560))
-        screen.blit(ca, (300, 560))
+        screen.blit(ca, (305, 560))
         pygame.display.update()
 
     if scene == 1.34 and claire.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
@@ -377,8 +377,10 @@ while not done:
         st2 = font2.render("no", True, (255, 255, 255))
         screen.blit(st1, (150, 560))
         screen.blit(st2, (355, 560))
+        pygame.display.update()
         scene = 1.64
 
+    # Doctor: yes    stove: no
     if scene == 1.64 and yesStove.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
         scene = 1.641
 
@@ -393,7 +395,120 @@ while not done:
         dialogue("I will.", you)
         scene = 2
 
+    # doctor: yes    Stove: no
     if doctor1 == True and scene == 1.642:
         dialogue("Alright, I’ll go ask Kristy-Anne since she was in the house earlier.", david)
         scene = 1.6421
-        
+
+    if scene == 1.6421 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David leaves and I wait for him in the kitchen.", thought)
+        scene = 1.64211
+
+    if scene == 1.64211 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Kristy-Anne said she didn’t touch the stove.", david)
+        scene = 1.642111
+
+    if scene == 1.642111 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh. Then I must have forgot that I was cooking something.", you)
+        scene = 1.6421111
+
+    if scene == 1.6421111 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh mom… next time tell me when you’re going to use the stove.", david)
+        scene = 1.64211111
+
+    if scene == 1.64211111 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Ok.", you)
+        scene = 2
+
+    # doctor: no    stove: yes
+    if doctor1 == False and scene == 1.641:
+        dialogue("Why didn’t you turn it off?", david)
+        scene = 1.6412
+
+    if scene == 1.6412 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("I… I forgot that it was on…", you)
+        scene = 1.64122
+
+    if scene == 1.64122 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Mom, let’s go to the doctor. Your memory is too bad to just be age.", david)
+        scene = 1.641222
+
+    if scene == 1.641222 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Ok...", you)
+        scene = 1.65
+
+    # doctor: no     stove: no
+    if doctor1 == False and scene == 1.642:
+        dialogue("Alright, I’ll go ask Kristy-Anne since she was in the house earlier.", david)
+        scene = 1.6422
+
+    if scene == 1.6422 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David leaves and I wait for him in the kitchen.", thought)
+        scene = 1.64222
+
+    if scene == 1.64222 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Kristy-Anne said she didn’t touch the stove.", david)
+        scene = 1.642222
+
+    if scene == 1.642222 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh. Then I must have forgot that I was cooking something.", you)
+        scene = 1.6422222
+
+    if scene == 1.6422222 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Mom, we’re going to the doctor.", david)
+        scene = 1.64222222
+
+    if scene == 1.64222222 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Ok...", you)
+        scene = 1.65
+
+    # doctor's office
+    if scene == 1.65 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("After testing, we can confirm that your mother has Alzheimer’s dementia.", doctor)
+        scene = 1.651
+
+    if scene == 1.651 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("It would have been better if she had been diagnosed sooner, but here is some medication to ease the effects of the disease.", doctor)
+        scene = 1.6511
+
+    if scene == 1.6511 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Alright, thank you.", david)
+        scene = 1.65111
+
+    if scene == 1.65111 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("David is driving us home...*did David miss a turn?*", thought)
+        pygame.draw.rect(screen, (0, 0, 0), yesTurn)
+        pygame.draw.rect(screen, (0, 0, 0), noTurn)
+        y = font2.render("yes", True, (255, 255, 255))
+        n = font2.render("no", True, (255, 255, 255))
+        screen.blit(y, (150, 560))
+        screen.blit(n, (355, 560))
+        pygame.display.update()
+        scene = 1.651111
+
+    if scene == 1.651111 and yesTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David, I think you missed a turn", you)
+        scene = 1.6511111
+
+    if scene == 1.6511111 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("David ignores me", thought)
+        scene = 2
+
+    if scene == 1.651111 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David, how much longer until we’re home?", you)
+        scene = 1.6511111
+
+    if scene == 1.6511111 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("About 5 more minutes.", david)
+        scene = 2
+
+
+    # ACT 2 FIRST PART(SHANNI)
+
+
+
+    # ACT 2 SECOND PART(VIVIAN)
+
+
+
+    # ACT 3 and some of 2(SEONGA)
