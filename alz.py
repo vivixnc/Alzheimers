@@ -595,6 +595,9 @@ while not done:
         scene = 2.414
     if scene == 2.414 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("It’s the least I can do.", kristyanne)
+        scene = 2.415
+    if scene == 2.415 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("As she leaves, I stare at the clothes she laid out for me. I can’t even choose my own clothes anymore… what has become of me?", thought)
         scene = 2.5
     
     # ACT2SCENE5(2.5)(VIVIAN)
