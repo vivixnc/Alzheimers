@@ -601,7 +601,43 @@ while not done:
         scene = 2.5
     
     # ACT2SCENE5(2.5)(VIVIAN)
-
+    if scene == 2.5 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Mom! What are you doing?! You made a mess!", david)
+        scene = 2.51
+    if scene == 2.51 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh. I didn’t notice! It just- I- it’s calming…", you)
+        scene == 2.52
+    if scene == 2.52 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Oh mom… I have to clean this up now…", david)
+        scene = 2.53
+    if scene == 2.53 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("You don’t think I can clean up after myself?", you)
+        scene = 2.54
+    if scene == 2.54 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("What? No, that’s not what I mean.", david)
+        scene = 2.55
+    if scene == 2.55 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Well, that’s what it sounds like. What’s so wrong with some… some… shredded tissue? I’m so sorry that I… that… I get calm from making a mess.", you)
+        scene = 2.56
+    if scene == 2.56 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Mom! Why are you like this? You know that’s not true.", david)
+        scene = 2.57
+    if scene == 2.57 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("I’m about to say something when a load wail from David and Kristy-Anne’s room interrupts us.", thought)
+        scene == 2.58
+    if scene == 2.58 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Jacob! Go check on him, David!", you)
+        scene = 2.59
+    if scene == 2.59 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("He probably got upset by our argument. I’m sorry mom. I’ll go check on him.", david)
+        scene = 2.511
+    if scene == 2.511 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("As David runs off, I sit back down and stare at my pile of shredded tissue.", thought)
+        scene = 2.512
+    if scene == 2.512 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("I suppose I shouldn’t have done this… I should… should… what’s the word… let’s get rid of it. I’m sorry David… I’m a mess… just like this one…", thought)
+        scene = 2.6
+        
     # ACT2SCENE6(2.6)(SEONGA)
 
     # ACT2SCENE7(2.7)(SEONGA)
