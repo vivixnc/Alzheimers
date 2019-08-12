@@ -502,13 +502,24 @@ while not done:
         dialogue("About 5 more minutes.", david)
         scene = 2
 
+    if scene == 2 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David and Kristy-Anne get married two years after meeting each other. They are so wonderful together, and I’m very happy for my son :)", thought)
+        scene == 2.01
 
-    # ACT 2 FIRST PART(SHANNI)
-
-
-
-    # ACT 2 SECOND PART(VIVIAN)
-
-
-
-    # ACT 3 and some of 2(SEONGA)
+    if scene == 2.01 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("David’s life is the brightest it’s ever been and will only continue to be brighter. My days, on the other hand, only seem to get darker…", thought)
+        scene = 2.1
+        
+    # ACT2SCENE1(2.1)
+    
+    # ACT2SCENE2(2.2)
+    
+    # ACT2SCENE3(2.3)
+    
+    # ACT2SCENE4(2.4)
+    
+    # ACT2SCENE5(2.5)
+    
+    # ACT2SCENE6(2.6)
+    
+    # ACT2SCENE7(2.7)
