@@ -531,9 +531,9 @@ while not done:
     # MOUSEBUTTONS ARE SUBJECT TO CHANGE
     # ACT2SCENE1(2.1)(SHANNI)
 
-    # ACT2SCENE2(2.2)(SHANNI)
+    # ACT2SCENE2(2.2)
 
-    # ACT2SCENE3(2.3)
+    # ACT2SCENE3(2.3)(SHANNI)
 
     # ACT2SCENE4(2.4)(VIVIAN)
     if scene == 2.4 and event.type == pygame.MOUSEBUTTONUP:
