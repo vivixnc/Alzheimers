@@ -42,6 +42,8 @@ neighbor = pygame.Rect(100, 550, 130, 50)
 gf = pygame.Rect(300, 550, 130, 50)
 yesStove = pygame.Rect(100, 550, 150, 80)
 noStove = pygame.Rect(300, 550, 150, 80)
+yesHelp = pygame.Rect(100, 550, 150, 80)
+noHelp = pygame.Rect(300, 550, 150, 80)
 
 done = False
 
