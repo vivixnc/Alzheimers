@@ -45,6 +45,9 @@ gf = pygame.Rect(300, 550, 130, 50)
 yesStove = pygame.Rect(100, 550, 150, 80)
 noStove = pygame.Rect(300, 550, 150, 80)
 
+yesHelp = pygame.Rect(75, 550, 150, 80)
+noHelp = pygame.Rect(275, 550, 150, 80)
+
 done = False
 
 def dialogue(line, speaker):
@@ -585,5 +588,27 @@ while not done:
     if scene == 2.69 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("I don’t know mom… I think you should go inside...", david)
         scene = 2.7
-        
+
     # ACT2SCENE7(2.7)
+    if scene == 2.7 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Mom, I want you to meet someone.", david)
+        scene = 2.71
+
+    if scene == 2.71 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Who? Her?", you)
+        scene = 2.72
+
+    if scene == 2.72 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Yes, mom. She’s going to be your personal helper from now on.", david)
+        scene = 2.73
+
+    if scene == 2.73 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Oh…", you)
+        pygame.draw.rect(screen, (0, 0, 0), yesTurn)
+        pygame.draw.rect(screen, (0, 0, 0), noTurn)
+        yesHelp = font2.render("Thank you...", True, (255, 255, 255))
+        noHelp = font2.render("I don't need her.", True, (255, 255, 255))
+        screen.blit(y, (150, 560))
+        screen.blit(n, (355, 560))
+        pygame.display.update()
+        scene = 2.74
