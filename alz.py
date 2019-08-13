@@ -603,7 +603,7 @@ while not done:
         screen.blit(ng2, (290, 580))
         screen.blit(ng3, (320, 600))
         pygame.display.update()
-        scene == 2.25
+        scene = 2.25
     # LEFT
     if scene == 2.25 and yesGroc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("Thank you, mom. I just don’t want you to get lost or carry the heavy groceries.", david)
