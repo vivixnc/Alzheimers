@@ -743,3 +743,43 @@ while not done:
         screen.blit(noHelp1, (355, 560))
         pygame.display.update()
         scene = 2.74
+        
+        if scene == 2.74 and yesHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Hello, my name is Ellen. I’ll be assisting you from now on.", unknown)
+        scene = 2.742
+
+    if scene == 2.742 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Will you be living here?", you)
+        scene = 2.7422
+
+    if scene == 2.7422 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("No, I’ll only stay until 7 in the evening and arrive at 6 in the morning.", ellen)
+        scene = 2.74222
+
+    if scene == 2.742222 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("She is only going to be here when Kristy-Anne and I are at work and a little longer.", david)
+        scene = 2.75
+
+    if scene == 2.74 and noHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Mom, that’s rude. We already hired her. You should be grateful.", david)
+        scene = 2.741
+
+    if scene == 2.7411 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Fine.", you)
+        scene = 2.74111
+
+    if scene == 2.74111 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Umm… my name is Ellen. I’ll be assisting you from now on.", unknown)
+        scene = 2.741111
+
+    if scene == 2.741111 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("She’ll only be here when Kristy-Anne and I are at work. We’re just worried for you.", david)
+        scene = 2.75
+
+    if scene == 2.75 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Ok...", you)
+        scene = 2.76
+
+    if scene == 2.76 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I’m sorry David. I must be such a huge burden on you… If only I could be a better mother…", thought)
+        scene = 3
