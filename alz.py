@@ -1014,8 +1014,8 @@ while not done:
     if scene == 2.76 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("I’m sorry David. I must be such a huge burden on you… If only I could be a better mother…", thought)
         scene = 3
-        
-    # ACT THREE
+
+     # ACT THREE
     if scene == 3 and event.type == pygame.MOUSEBUTTONUP:
         screen.fill((0, 0, 0))
         act3 = font1.render("ACT THREE", True, (255, 255, 255))
@@ -1028,6 +1028,7 @@ while not done:
 
     # ACT3SCENE1 (3.1)
     if scene == 3.1 and event.type == pygame.MOUSEBUTTONDOWN:
+        screen.fill((0, 0, 0))
         dialogue("Mom, I got you a wheelchair. It’ll be easier to move around.", david)
         scene = 3.12
 
@@ -1068,7 +1069,7 @@ while not done:
         scene = 3.2
 
     # ACT3SCENE2
-    if scene = 3.2 and event.type == pygame.MOUSEBUTTONDOWN:
+    if scene == 3.2 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("Sobbing noises wake me up.", thought)
         scene = 3.21
 
