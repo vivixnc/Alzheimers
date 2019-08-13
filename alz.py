@@ -721,6 +721,84 @@ while not done:
     if scene == 2.25 and noGroc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
         scene = 2.252
     # ACT2SCENE3(2.3)(SHANNI)
+    if scene==2.3 and event.type==pygame.MOUSEBUTTONUP:
+        screen.fill((0, 0, 0))
+        scene=2.31
+    if scene=2.31 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Mom! Mom, we’re home! We have a son! Did you hear that? You have a grandson!",david)
+        scene=2.311
+    if scene==2.311 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("Where is she? She usually greets us at the door. Do you think she’s hurt? Lost?",kristyanne)
+        scene=2.3111
+    if scene=2.3111 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Let’s check her room. Maybe she’s waiting for us there.Mom? Mom, wake up.",david)
+        scene=2.32
+    if scene==2.32 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("Huh? Is it morning already?",you)
+        scene=2.322
+    if scene==2.322 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("No, mom. It’s 4 in the afternoon.",david)
+        scene=2.3222
+    if scene==2.3222 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("4? All I know is I was really tired, so I went to bed. I don’t remember what time I slept though…",you)
+        scene=2.32222
+    if scene==2.322222 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Well, at least you’re up. Meet your grandson, Jacob! Isn’t he adorable?",kristyanne)
+        scene=2.3222222
+    if scene==2.3222222 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("Oh! He looks just like David when he was born. Oh, but he has your nose, Kristy-Anne.",you)
+        scene=2.32222222
+    if scene==2.32222222 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("David, I’m tired. I’ll take Jacob with me and put him in his crib. I should rest now so I’ll be able to take care of Jacob when he wakes up later.",kristyanne)
+        scene=2.322222222
+    if scene==2.322222222 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("Ok, dear. I’ll leave you to rest.",david)
+        scene=2.33
+    if scene==2.33 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Mom, are you alright?",david)
+        scene=2.333
+    if scene==2.333 and event.type==pygame.MOUSEBUTTONUP:       
+        dialogue("Yes, of course I am. I was just taking a nap.",you)
+        scene=2.3333
+    if scene==2.3333 and event.type==pygame.MOUSEBUTTONDOWN: 
+        dialogue("But mom, you usually don’t take naps.",david)
+        scene=2.33333
+    if scene==2.33333 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("I know… I just…",you)
+        scene=2.333333
+    if scene==2.333333 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Are you sure you’re feeling alright?",david)
+        scene=2.3333333
+    if scene==2.3333333 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("Well, I haven’t been able to sleep at night and I’ve been feeling terribly sleepy in the morning.",you)
+        scene=2.33333333
+    if scene==2.33333333 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Oh… well, why don’t you go back to sleep and I’ll call the doctor to ask what might be wrong.",david)
+        scene=2.333333333
+    if scene==2.333333333 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("I don’t think so… I haven’t been able to sleep at night lately.",you)
+        scene=2.3333333333
+    if scene==2.3333333333 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("You haven’t?",david)
+        scene=2.37
+    if scene==2.37 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("I haven’t.",you)
+        scene=2.377
+    if scene==2.377 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Why didn’t you tell me?",david)
+        scene=2.3777
+    if scene==2.3777 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("I didn’t think it was a big deal and I didn’t want you to stress more than you needed to, especially since you had a baby on the way.",you)
+        scene=2.37777
+    if scene==2.37777 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Oh mom… you should go back to sleep. I’ll call the doctor to ask what might be wrong.",david)
+        scene=2.377777
+    if scene==2.377777 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("OK David",you)
+        scene=2.38
+    if scene==2.38 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("I close my eyes as he leaves the room. I don’t want him to worry so much, but I’m too tired to reassure him any more.",thought)
+        scene=2.4
 
     # ACT2SCENE4(2.4)(VIVIAN)
     if scene == 2.4 and event.type == pygame.MOUSEBUTTONUP:
