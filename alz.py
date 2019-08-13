@@ -86,6 +86,21 @@ def dialogue(line, speaker):
         pygame.display.flip()
         pygame.time.wait(30)
     pygame.mixer.music.stop()
+    
+def dialogueCredit(line):
+    x = 40
+    y = 170
+    i = 0
+    for i in range (len(line)):
+        if(x >= 400 and line[i-1] == " "):
+            x = 40
+            y += 30
+        else:
+            x += 10
+        letter = font3.render(line[i], True, (255, 255, 255))
+        screen.blit(letter, (x, y))
+        pygame.display.flip()
+        pygame.time.wait(100)
 
 while not done:
     for event in pygame.event.get():
@@ -1378,10 +1393,13 @@ while not done:
     # ENDING CREDITS (4)
     if scene == 4 and event.type == pygame.MOUSEBUTTONUP:
         screen.fill((0, 0, 0))
+        dialogueCredit("Alzheimer’s is a disease that affects the brain, causing the patient to lose their memory as well as basic function, such as speech, walking, and eating.                                      Treat your family members with this disease with love and patience.")
+        '''
         definition = font2.render("Alzheimer’s is a disease that affects the brain, causing the patient to lose their memory as well as basic function, such as speech, walking, and eating.", True, (255, 255, 255))
         reminder = font2.render("Treat your family members with this disease with love and patience.", True, (255, 255, 255))
         screen.blit(definition, (20, 200))
         screen.blit(reminder, (20, 400))
+        '''
         pygame.display.update()
         scene = 4.1
 
