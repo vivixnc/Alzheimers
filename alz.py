@@ -1388,6 +1388,8 @@ while not done:
     if scene == 4.1 and event.type == pygame.MOUSEBUTTONDOWN:
         screen.fill((0, 0, 0))
         credit = font2.render("Credits: ", True, (255, 255, 255))
-        names = font2.render("Vivian Chen Lam, Seonga Oh, Shanni Yu")
+        names = font2.render("Vivian Chen Lam, Seonga Oh, Shanni Yu",True, (255, 255, 255))
         screen.blit(credit, ((500 - credit.get_width()) // 2, (600 - credit.get_height()) // 2))
-        screen.blit(names, ((500 - names.get_width()) // 2, (600 - son.get_height()) // 2 + 50))
+        screen.blit(names, ((500 - names.get_width()) // 2, (600 - names.get_height()) // 2 + 50))
+        pygame.display.update()
+    
