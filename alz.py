@@ -20,7 +20,7 @@ font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
 
 # sets scene to 0
-scene = 2.253
+scene = 0.0
 
 # words for opening page
 title = font1.render("Alzheimer's", True, (56, 0, 113))
@@ -59,7 +59,12 @@ noCall = pygame.Rect(300, 550, 130, 50)
 done = False
 
 def dialogue(line, speaker):
-    pygame.draw.rect(screen, (20, 0, 56), (0, 400, 500, 700), 0)
+    if scene < 2 and scene > 0:
+        pygame.draw.rect(screen, (199, 167, 240), (0, 400, 500, 700), 0)
+    elif scene > 1.9999 and scene < 3:
+        pygame.draw.rect(screen, (199, 167, 255), (0, 400, 500, 700), 0)
+    else:
+        pygame.draw.rect(screen, (134, 40, 216), (0, 400, 500, 700), 0)
     screen.blit(speaker, (30, 420))
     pygame.display.update()
     pygame.mixer.pre_init(44100, 16, 2, 4096)
@@ -120,19 +125,19 @@ while not done:
         dialogue("Mom, let's go to the doctor to check up on your health. I've noticed your memory has been a little off lately......", david)
 
         # drawing yes and no buttons (box only)
-        pygame.draw.rect(screen, [0, 0, 0], yesDoc)
-        pygame.draw.rect(screen, [0, 0, 0], noDoc)
+        pygame.draw.rect(screen, [255, 255, 255], yesDoc)
+        pygame.draw.rect(screen, [255, 255, 255], noDoc)
 
         # rendering and printing button text
-        yes1 = font3.render("yes, i should", True, (255, 255, 255))
-        yes2 = font3.render("probably get it", True, (255, 255, 255))
-        yes3 = font3.render("checked :/", True, (255, 255, 255))
+        yes1 = font3.render("yes, i should", True, (199, 167, 255))
+        yes2 = font3.render("probably get it", True, (199, 167, 255))
+        yes3 = font3.render("checked :/", True, (199, 167, 255))
         screen.blit(yes1, (85, 560))
         screen.blit(yes2, (85, 580))
         screen.blit(yes3, (85, 600))
-        no1 = font3.render("no, i'm not", True, (255, 255, 255))
-        no2 = font3.render("going insane", True, (255, 255, 255))
-        no3 = font3.render(">:(", True, (255, 255, 255))
+        no1 = font3.render("no, i'm not", True, (199, 167, 255))
+        no2 = font3.render("going insane", True, (199, 167, 255))
+        no3 = font3.render(">:(", True, (199, 167, 255))
         screen.blit(no1, (300, 560))
         screen.blit(no2, (295, 580))
         screen.blit(no3, (330, 600))
@@ -164,10 +169,10 @@ while not done:
         pygame.display.update()
         '''
         dialogue("*did David miss a turn?*", you)
-        pygame.draw.rect(screen, (0, 0, 0), yesTurn)
-        pygame.draw.rect(screen, (0, 0, 0), noTurn)
-        y = font2.render("yes", True, (255, 255, 255))
-        n = font2.render("no", True, (255, 255, 255))
+        pygame.draw.rect(screen, (255, 255, 255), yesTurn)
+        pygame.draw.rect(screen, (255, 255, 255), noTurn)
+        y = font2.render("yes", True, (199, 167, 255))
+        n = font2.render("no", True, (199, 167, 255))
         screen.blit(y, (150, 560))
         screen.blit(n, (355, 560))
         pygame.display.update()
@@ -264,10 +269,10 @@ while not done:
         '''
         dialogue("What was her name again?", you)
         scene = 1.34
-        pygame.draw.rect(screen, (0, 0, 0), claire)
-        pygame.draw.rect(screen, (0, 0, 0), catherine)
-        cl = font2.render("Claire", True, (255, 255, 255))
-        ca = font2.render("Catherine", True, (255, 255, 255))
+        pygame.draw.rect(screen, (255, 255, 255), claire)
+        pygame.draw.rect(screen, (255, 255, 255), catherine)
+        cl = font2.render("Claire", True, (199, 167, 255))
+        ca = font2.render("Catherine", True, (199, 167, 255))
         screen.blit(cl, (130, 560))
         screen.blit(ca, (305, 560))
         pygame.display.update()
@@ -312,10 +317,10 @@ while not done:
 
     if scene == 1.47 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Mom, do you remember Kristy-Anne?", david)
-        pygame.draw.rect(screen, (0, 0, 0), neighbor)
-        pygame.draw.rect(screen, (0, 0, 0), gf)
-        nb = font3.render("neighbor?", True, (255, 255, 255))
-        gf1 = font3.render("girlfriend?", True, (255, 255, 255))
+        pygame.draw.rect(screen, (255, 255, 255), neighbor)
+        pygame.draw.rect(screen, (255, 255, 255), gf)
+        nb = font3.render("neighbor?", True, (199, 167, 255))
+        gf1 = font3.render("girlfriend?", True, (199, 167, 255))
         screen.blit(nb, (112, 560))
         screen.blit(gf1, (310, 560))
         pygame.display.update()
@@ -433,10 +438,10 @@ while not done:
 
     if scene == 1.63 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Mom… did you leave the stove on?", david)
-        pygame.draw.rect(screen, (0, 0, 0), yesStove)
-        pygame.draw.rect(screen, (0, 0, 0), noStove)
-        st1 = font2.render("yes", True, (255, 255, 255))
-        st2 = font2.render("no", True, (255, 255, 255))
+        pygame.draw.rect(screen, (255, 255, 255), yesStove)
+        pygame.draw.rect(screen, (255, 255, 255), noStove)
+        st1 = font2.render("yes", True, (199, 167, 255))
+        st2 = font2.render("no", True, (199, 167, 255))
         screen.blit(st1, (150, 560))
         screen.blit(st2, (355, 560))
         pygame.display.update()
@@ -557,10 +562,10 @@ while not done:
         pygame.display.update()
         '''
         dialogue("David is driving us home... *did David miss a turn?*", thought)
-        pygame.draw.rect(screen, (0, 0, 0), yesTurn)
-        pygame.draw.rect(screen, (0, 0, 0), noTurn)
-        y = font2.render("yes", True, (255, 255, 255))
-        n = font2.render("no", True, (255, 255, 255))
+        pygame.draw.rect(screen, (255, 255, 255), yesTurn)
+        pygame.draw.rect(screen, (255, 255, 255), noTurn)
+        y = font2.render("yes", True, (199, 167, 255))
+        n = font2.render("no", True, (199, 167, 255))
         screen.blit(y, (150, 560))
         screen.blit(n, (355, 560))
         pygame.display.update()
@@ -668,17 +673,17 @@ while not done:
         scene = 2.24
     if scene == 2.24 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("I insist, mom. We have our daily walks for that purpose.", david)
-        pygame.draw.rect(screen, [0, 0, 0], yesGroc)
-        pygame.draw.rect(screen, [0, 0, 0], noGroc)
-        yg1 = font3.render("Oh, alright. Get", True, (255, 255, 255))
-        yg2 = font3.render("the prettiest", True, (255, 255, 255))
-        yg3 = font3.render("flowers there", True, (255, 255, 255))
+        pygame.draw.rect(screen, [180, 180, 180], yesGroc)
+        pygame.draw.rect(screen, [180, 180, 180], noGroc)
+        yg1 = font3.render("Oh, alright. Get", True, (199, 167, 255))
+        yg2 = font3.render("the prettiest", True, (199, 167, 255))
+        yg3 = font3.render("flowers there", True, (199, 167, 255))
         screen.blit(yg1, (85, 560))
         screen.blit(yg2, (85, 580))
         screen.blit(yg3, (85, 600))
-        ng1 = font3.render("Well, I insist", True, (255, 255, 255))
-        ng2 = font3.render("that I go", True, (255, 255, 255))
-        ng3 = font3.render("by myself", True, (255, 255, 255))
+        ng1 = font3.render("Well, I insist", True, (199, 167, 255))
+        ng2 = font3.render("that I go", True, (199, 167, 255))
+        ng3 = font3.render("by myself", True, (199, 167, 255))
         screen.blit(ng1, (290, 560))
         screen.blit(ng2, (290, 580))
         screen.blit(ng3, (290, 600))
@@ -851,10 +856,10 @@ while not done:
         scene = 2.25332
     if scene == 2.25332 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("Should I call David?", thought)
-        pygame.draw.rect(screen, (0, 0, 0), yesCall)
-        pygame.draw.rect(screen, (0, 0, 0), noCall)
-        call = font2.render("Call", True, (255, 255, 255))
-        dCall = font2.render("Don't Call", True, (255, 255, 255))
+        pygame.draw.rect(screen, (180, 180, 180), yesCall)
+        pygame.draw.rect(screen, (180, 180, 180), noCall)
+        call = font2.render("Call", True, (199, 167, 255))
+        dCall = font2.render("Don't Call", True, (199, 167, 255))
         screen.blit(call, (130, 560))
         screen.blit(dCall, (305, 560))
         pygame.display.update()
@@ -1045,10 +1050,10 @@ while not done:
         scene = 2.49
     if scene == 2.49 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("Don’t mention it. Would you like me to do this everyday from now on?", kristyanne)
-        pygame.draw.rect(screen, (0, 0, 0), yesHelp)
-        pygame.draw.rect(screen, (0, 0, 0), noHelp)
-        yh = font2.render("yes", True, (255, 255, 255))
-        nh = font2.render("no", True, (255, 255, 255))
+        pygame.draw.rect(screen, (180, 180, 180), yesHelp)
+        pygame.draw.rect(screen, (180, 180, 180), noHelp)
+        yh = font2.render("yes", True, (199, 167, 255))
+        nh = font2.render("no", True, (199, 167, 255))
         screen.blit(yh, (120, 560))
         screen.blit(nh, (325, 560))
         pygame.display.update()
@@ -1176,11 +1181,11 @@ while not done:
 
     if scene == 2.73 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("Oh…", you)
-        pygame.draw.rect(screen, (0, 0, 0), yesHelp1)
-        pygame.draw.rect(screen, (0, 0, 0), noHelp1)
-        yh1 = font3.render("Thank you..", True, (255, 255, 255))
-        nh1 = font3.render("I don't", True, (255, 255, 255))
-        nh2 = font3.render("need her.", True, (255, 255, 255))
+        pygame.draw.rect(screen, (180, 180, 180), yesHelp1)
+        pygame.draw.rect(screen, (180, 180, 180), noHelp1)
+        yh1 = font3.render("Thank you..", True, (199, 167, 255))
+        nh1 = font3.render("I don't", True, (199, 167, 255))
+        nh2 = font3.render("need her.", True, (199, 167, 255))
         screen.blit(yh1, (120, 570))
         screen.blit(nh1, (330, 560))
         screen.blit(nh2, (335, 580))
