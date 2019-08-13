@@ -1014,3 +1014,112 @@ while not done:
     if scene == 2.76 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("I’m sorry David. I must be such a huge burden on you… If only I could be a better mother…", thought)
         scene = 3
+        
+    # ACT THREE
+    if scene == 3 and event.type == pygame.MOUSEBUTTONUP:
+        screen.fill((0, 0, 0))
+        act3 = font1.render("ACT THREE", True, (255, 255, 255))
+        severe = font1.render("SEVERE (1 YEARS)", True, (255, 255, 255))
+        screen.blit(act3, ((500 - act3.get_width()) // 2, (600 - act3.get_height()) // 2))
+        pygame.draw.line(screen, (255, 255, 255), (150, 320), (350, 320), 1)
+        screen.blit(severe, ((500 - severe.get_width()) // 2, (600 - act3.get_height()) // 2 + 50))
+        pygame.display.update()
+        scene = 3.1
+
+    # ACT3SCENE1 (3.1)
+    if scene == 3.1 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Mom, I got you a wheelchair. It’ll be easier to move around.", david)
+        scene = 3.12
+
+    if scene == 3.12 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Thanks. Should easy. Difficult to walk me.", you)
+        scene = 3.13
+
+    if scene == 3.13 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I know. Ellen told me.", david)
+        scene = 3.14
+
+    if scene == 3.14 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Who?", you)
+        scene = 3.15
+
+    if scene == 3.15 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Ellen, mom. Your personal helper.", david)
+        scene = 3.16
+
+    if scene == 3.16 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh, strange woman walk with me and food?", you)
+        scene = 3.17
+
+    if scene == 3.17 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Yes mom…", david)
+        scene = 3.18
+
+    if scene == 3.18 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Tired. Go bed.", you)
+        scene = 3.19
+
+    if scene == 3.19 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Ok mom. Let’s get you to bed so you can sleep.", david)
+        scene = 3.111
+
+    if scene == 3.111 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("I’m sorry David… I can’t do anything for you anymore, but you need to do everything for me. I wish I could turn back time to when things were easier…", thought)
+        scene = 3.2
+
+    # ACT3SCENE2
+    if scene = 3.2 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Sobbing noises wake me up.", thought)
+        scene = 3.21
+
+    if scene == 3.21 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Dada, don’t cry…", jacob)
+        scene = 3.22
+
+    if scene == 3.22 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Ah, I’m sorry Jacob. Your dad should be a strong man. You shouldn’t have to see your dad crying and broken.", david)
+        scene = 3.23
+
+    if scene == 3.23 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David, don’t say that. It’s because she’s your mom.", unknown)
+        scene = 3.24
+
+    if scene == 3.24 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Dada is sad because of grandma?", jacob)
+        scene = 3.25
+
+    if scene == 3.25 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Yes Jacob. Your grandma is very sick, and your dad loves her very much.", david)
+        scene = 3.26
+
+    if scene == 3.26 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Jacob… it’s bedtime. Let’s go to your room.", unknown)
+        scene = 3.27
+
+    if scene == 3.27 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Ok mama… goodnight dada. I love you.", jacob)
+        scene = 3.28
+
+    if scene == 3.28 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Goodnight Jacob. Sleep tight.", david)
+        scene = 3.29
+
+    if scene == 3.29 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Footsteps walk away from where we are.", thought)
+        scene = 3.211
+
+    if scene == 3.211 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Da…", you)
+        scene = 3.212
+
+    if scene == 3.212 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Mom? Are you awake?", david)
+        scene = 3.213
+
+    if scene == 3.213 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Eh… meh… sss…", you)
+        scene = 3.214
+
+    if scene == 3.214 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("I’m sorry, David. Seeing me like this must make you so sad and tired. I only wanted you to have a happy and healthy life.", thought)
+        scene == 3.3
