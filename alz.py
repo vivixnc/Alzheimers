@@ -18,7 +18,7 @@ font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
 
 # sets scene to 0
-scene = 2.2512
+scene = 0.0
 
 # words for opening page
 title = font1.render("Alzheimer's", True, (56, 0, 113))
@@ -84,7 +84,6 @@ while not done:
     # continuosly updates position of the cursor
     mousePos = pygame.mouse.get_pos()
     # opening title screen
-    '''
     if(scene == 0.0):
         screen.fill((0, 0, 0))
         screen.blit(title, ((500 - title.get_width()) // 2, (600 - title.get_height()) // 2))
@@ -632,7 +631,6 @@ while not done:
     if scene == 2.2511111111 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("I will, mom. I’ll ask Kristy-Anne to keep you company while I’m out.", david)
         scene = 2.2512
-    '''
     if scene == 2.2512 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("You think I can’t keep myself busy? I can read my book. I don’t want to bother your wife too much since she’s due soon.", you)
         scene = 2.2513
