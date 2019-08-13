@@ -51,6 +51,8 @@ yesGroc = pygame.Rect(75, 550, 150, 80)
 noGroc = pygame.Rect(275, 550, 150, 80)
 yesHelp1 = pygame.Rect(100, 550, 120, 70)
 noHelp1 = pygame.Rect(300, 550, 120, 70)
+yesCall= pygame.Rect(100, 550, 130, 50)
+noCall = pygame.Rect(300, 550, 130, 50)
 
 done = False
 
@@ -723,6 +725,117 @@ while not done:
     # RIGHT
     if scene == 2.25 and noGroc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
         scene = 2.252
+        if scene == 2.252 and noGroc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
+    dialogue("Oh… ok. Just… give me a call if you need anything.",david)
+    scene=2.2521
+    if scene==2.2521 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("Oh. I didn’t mean to sound harsh. But I will give you a call. Thank you, sweetie.",you)
+        scene=2.2522
+    if scene==2.2522 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("I just want you to be safe, mom.",david)
+        scene=2.2523
+    if scene==2.2523 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("I will be safe. The neighbors know about my condition. Plus you’re always one call away.",you)
+        scene=2.2524
+    if scene==2.2524 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("I know. I suppose I worry a bit too much. You have your wallet and phone?",you)
+        scene=2.2525
+    if scene==2.2525 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("Yes, David. I take extra care to have everything I need before I go out.",you)
+        scene=2.2526
+    if scene==2.2526 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Ok, mom. I’ll see you soon.",david)
+        scene=2.2527
+    if scene==2.2527 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("Bye",you)
+        scene=2.2528
+    if scene==2.253 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Hmm… I can’t seem to recall where I am now… Oh dear. Am I lost? That isn’t good… Do I make a right here? Or is it a left? Maybe I should call David… he’ll know what to do.",thought)
+        pygame.draw.rect(screen, (0, 0, 0), yesCall)
+        pygame.draw.rect(screen, (0, 0, 0), NoCall)
+        call = font2.render("Call", True, (255, 255, 255))
+        dCall = font2.render("Don't Call", True, (255, 255, 255))
+        screen.blit(call, (130, 560))
+        screen.blit(dCall, (305, 560))
+        pygame.display.update()
+        scene=2.2531
+    if scene==2.2531 and yesCall.collidepoint(mousePos)and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("I should call David. I did tell him I’d call him if anything happened. He won’t be too happy if he finds out I continued to wander around when I wasn’t sure where I was. The phone rings for a bit before I hear David’s voice.",thought)
+        scene=2.25312
+    if scene==2.25312 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Hello? Mom?",david)
+        scene=2.253122
+    if scene==2.253122 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("David! I uh… can’t seem to recall where I am.",you）
+        scene=2.2531222
+    if scene==2.2531222 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("Oh. Tell me what street you’re on and I’ll come pick you up.",david)
+        scene=2.25312222
+    if scene==2.25312222 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("But the groceries…",you)
+        scene=2.253122222
+    if scene==2.253122222 and event.type==pygame.MOUSEBUTTONDOWN:
+        dialogue("It’s ok, mom. We can get them together.",david)
+        scene=2.2531222222
+    if scene==2.2531222222 and event.type==pygame.MOUSEBUTTONUP:
+        dialogue("Ok. I’m on… Green Street and Apple Avenue.",you)
+        scene=2.25312222222
+    if scene==2.25312222222 and event.type==pygame.MOUSEBUTTONDOWN:
+    dialogue("I'll be right there.",david)
+    scene=2.2532
+if scene==2.2531 and noCall.collidepoint(mousePos)and event.type==pygame.MOUSEBUTTONUP:
+    dialogue("I don’t need to call David, I’ll be alright. I’ve been on this route multiple times. I’ll get to the store through muscle memory.",thought)
+    scene=2.25313
+if scene==2.25313 and event.type==pygame.MOUSEBUTTONDOWN:
+    dialogue("I continue to try to find my way to the store, gripping my list tightly when I hear a car horn. I turn and see David in his car.",thought)
+    scene=2.253133
+if scene==2.253133 and event.type==pygame.MOUSEBUTTONUP:
+    dialogue("David?",you)
+    scene=2.2531333
+if scene==2.2531333 and event.type==pygame.MOUSEBUTTONDOWN:
+    dialogue("Yes mom. I’m here to pick you up.",david)
+    scene=2.25313333
+if scene==2.25313333 and event.type==pygame.MOUSEBUTTONUP:
+    dialogue("H-how did you know where I was?",you)
+    scene=2.253133333
+if scene==2.253133333 and event.type==pygame.MOUSEBUTTONDOWN:
+    dialogue("A neighbor called and told me he saw you wandering around.",david)
+    scene=2.25314
+if scene==2.25314 and event.type==pygame.MOUSEBUTTONUP:
+    dialogue("But… I’m on my way to the store.",you)
+    scene=2.253144
+if scene==2.253144 and event.type==pygame.MOUSEBUTTONDOWN:
+    dialogue("This isn’t the way to the store, mom. That’s why he called.",david)
+    scene=2.2531444
+if scene==2.2531444 and event.type==pygame.MOUSEBUTTONUP:
+    dialogue("Oh… I’ll get in the car.",you)
+    scene=2.25314444
+if scene==2.25314444 and event.type==pygame.MOUSEBUTTONDOWN:
+    dialogue("Thank you, mom. Let’s get you home.",david)
+    scene=2.253144444
+if scene==2.253144444 and event.type==pygame.MOUSEBUTTONUP:
+    dialogue("But… the groceries…",you)
+    scene=2.2531444444
+if scene==2.2531444444 and event.type==pygame.MOUSEBUTTONDOWN:
+    dialogue("Hmm… alright, let’s go to the store first since we’re already out.",david)
+    scene=2.2532
+if scene==2.2532 and event.type==pygame.MOUSEBUTTONUP:
+    dialogue("We sit in silence as David drives to the store.",thought)
+    scene=2.25322
+if scene==2.25322 and event.type==pygame.MOUSEBUTTONDOWN:
+    dialogue("Mom, next time, let me handle the groceries. Or let me go with you at least.",david)
+    scene=2.253222
+if scene==2.253222 and event.type==pygame.MOUSEBUTTONUP:
+    dialogue("Ok. I’m sorry for causing you trouble.",you)
+    scene=2.2532222
+if scene==2.2532222 and event.type==pygame.MOUSEBUTTONDOWN:
+    dialogue("It’s ok, mom. I just want you to be safe.",david)
+    scene=2.25322222
+if scene==2.25322222 and event.type==pygame.MOUSEBUTTONUP:
+    dialogue("I know… I know.",you)
+    scene=2.3
+             
+             
     # ACT2SCENE3(2.3)(SHANNI)
     if scene==2.3 and event.type==pygame.MOUSEBUTTONUP:
         screen.fill((0, 0, 0))
