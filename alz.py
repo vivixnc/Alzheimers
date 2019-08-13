@@ -533,9 +533,41 @@ while not done:
         pygame.draw.line(screen, (255, 255, 255), (150, 320), (350, 320), 1)
         screen.blit(moderate, ((500 - moderate.get_width()) // 2, (600 - act2.get_height()) // 2 + 50))
         pygame.display.update()
-        scene = 2.2
+        scene = 2.11
     # MOUSEBUTTONS ARE SUBJECT TO CHANGE
     # ACT2SCENE1(2.1)(SHANNI)
+        if scene == 2.11 and (event.type == pygame.MOUSEBUTTONDOWN):
+        screen.fill((0, 0, 0))
+        dialogue("Mom! We’re back!", david)
+        scene = 2.12
+    if scene == 2.12 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh! David! Kristy-Anne! How was your honeymoon? Did you enjoy yourselves? I hope it wasn’t too short because you had to come back and take care of me…"
+, you)
+        scene = 2.13
+    if scene == 2.13 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Mother, don’t worry.  Our honeymoon was wonderful, and it wasn’t too short. And… we’re expecting!",kristyanne)
+        scene=2.14
+    if scene == 2.14 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Expecting? That means! You! I!", you)
+        scene=2.15
+    if scene == 2.15 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Yes mom. You’re going to have a grandchild.",david)
+        scene=2.16
+    if scene == 2.16 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("I’m so excited!",you)
+        scene=2.17
+    if scene == 2.17 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("We are too. We couldn’t wait to tell you.",kristyanne)
+        scene=2.18
+    if scene == 2.18 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Hopefully I’ll be able to me a good grandmother. Most grandmas don’t have…",you)
+        scene=2.19
+    if scene == 2.19 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I know you’ll be a wonderful grandma, mom.", david)
+        scene=2.191
+    if scene == 2.191 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Thank you.",you)
+        scene=2.2
 
     # ACT2SCENE2(2.2)
     if scene == 2.2 and event.type == pygame.MOUSEBUTTONUP:
