@@ -746,7 +746,7 @@ while not done:
         pygame.display.update()
         scene = 2.74
         
-        if scene == 2.74 and yesHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 2.74 and yesHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Hello, my name is Ellen. I’ll be assisting you from now on.", unknown)
         scene = 2.742
 
