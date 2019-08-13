@@ -605,7 +605,7 @@ while not done:
         ng3 = font3.render("by myself", True, (255, 255, 255))
         screen.blit(ng1, (290, 560))
         screen.blit(ng2, (290, 580))
-        screen.blit(ng3, (315, 600))
+        screen.blit(ng3, (290, 600))
         pygame.display.update()
         scene = 2.25
     # LEFT
@@ -723,11 +723,10 @@ while not done:
         scene = 2.3
 
     # RIGHT
+
     if scene == 2.25 and noGroc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
-        scene = 2.252
-        if scene == 2.252 and noGroc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
-    dialogue("Oh… ok. Just… give me a call if you need anything.",david)
-    scene=2.2521
+        dialogue("Oh… ok. Just… give me a call if you need anything.",david)
+        scene=2.2521
     if scene==2.2521 and event.type==pygame.MOUSEBUTTONUP:
         dialogue("Oh. I didn’t mean to sound harsh. But I will give you a call. Thank you, sweetie.",you)
         scene=2.2522
@@ -748,7 +747,7 @@ while not done:
         scene=2.2527
     if scene==2.2527 and event.type==pygame.MOUSEBUTTONUP:
         dialogue("Bye",you)
-        scene=2.2528
+        scene=2.253
     if scene==2.253 and event.type==pygame.MOUSEBUTTONDOWN:
         dialogue("Hmm… I can’t seem to recall where I am now… Oh dear. Am I lost? That isn’t good… Do I make a right here? Or is it a left? Maybe I should call David… he’ll know what to do.",thought)
         pygame.draw.rect(screen, (0, 0, 0), yesCall)
