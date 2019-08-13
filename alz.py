@@ -31,6 +31,8 @@ preka = font2.render("???: ", True, (255, 255, 255))
 kristyanne = font2.render("Kristy-Anne: ", True, (255, 255, 255))
 doctor = font2.render("Dr. Pineapple: ", True, (255, 255, 255))
 thought = font2.render(" ", True, (255, 255, 255))
+jacob = font2.render("Jacob", True, (255, 255, 255))
+
 # making yes and no buttons for act one scene 1
 yesDoc = pygame.Rect(75, 550, 150, 80)
 noDoc = pygame.Rect(275, 550, 150, 80)
@@ -42,12 +44,12 @@ neighbor = pygame.Rect(100, 550, 130, 50)
 gf = pygame.Rect(300, 550, 130, 50)
 yesStove = pygame.Rect(100, 550, 130, 50)
 noStove = pygame.Rect(300, 550, 130, 50)
-yesHelp = pygame.Rect(100, 550, 150, 80)
-noHelp = pygame.Rect(300, 550, 150, 80)
+yesHelp = pygame.Rect(100, 550, 130, 50)
+noHelp = pygame.Rect(300, 550, 130, 50)
 yesGroc = pygame.Rect(75, 550, 150, 80)
 noGroc = pygame.Rect(275, 550, 150, 80)
-yesHelp1 = pygame.Rect(100, 550, 130, 80)
-noHelp1 = pygame.Rect(300, 550, 130, 80)
+yesHelp1 = pygame.Rect(100, 550, 120, 70)
+noHelp1 = pygame.Rect(300, 550, 120, 70)
 
 done = False
 
@@ -598,9 +600,9 @@ while not done:
         ng1 = font3.render("Well, I insist", True, (255, 255, 255))
         ng2 = font3.render("that I go", True, (255, 255, 255))
         ng3 = font3.render("by myself", True, (255, 255, 255))
-        screen.blit(ng1, (300, 560))
-        screen.blit(ng2, (280, 580))
-        screen.blit(ng3, (320, 600))
+        screen.blit(ng1, (290, 560))
+        screen.blit(ng2, (290, 580))
+        screen.blit(ng3, (315, 600))
         pygame.display.update()
         scene = 2.25
     # LEFT
@@ -631,6 +633,7 @@ while not done:
     if scene == 2.2511111111 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("I will, mom. I’ll ask Kristy-Anne to keep you company while I’m out.", david)
         scene = 2.2512
+
     if scene == 2.2512 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("You think I can’t keep myself busy? I can read my book. I don’t want to bother your wife too much since she’s due soon.", you)
         scene = 2.2513
@@ -831,8 +834,8 @@ while not done:
         dialogue("Don’t mention it. Would you like me to do this everyday from now on?", kristyanne)
         pygame.draw.rect(screen, (0, 0, 0), yesHelp)
         pygame.draw.rect(screen, (0, 0, 0), noHelp)
-        yh = font3.render("yes", True, (255, 255, 255))
-        nh = font3.render("no", True, (255, 255, 255))
+        yh = font2.render("yes", True, (255, 255, 255))
+        nh = font2.render("no", True, (255, 255, 255))
         screen.blit(yh, (120, 560))
         screen.blit(nh, (325, 560))
         pygame.display.update()
@@ -843,7 +846,7 @@ while not done:
     if scene == 2.4111 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("Kristy-Anne at your service ;)", kristyanne)
         scene = 2.413
-    if scene == 2.411 and yesHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
+    if scene == 2.411 and noHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("I insist, mother. Please? It’ll be easier than asking me everyday if I just do it myself.", you)
         scene = 2.4112
     if scene == 2.4112 and event.type == pygame.MOUSEBUTTONUP:
@@ -962,10 +965,12 @@ while not done:
         dialogue("Oh…", you)
         pygame.draw.rect(screen, (0, 0, 0), yesHelp1)
         pygame.draw.rect(screen, (0, 0, 0), noHelp1)
-        yesHelp1 = font2.render("Thank you...", True, (255, 255, 255))
-        noHelp1 = font2.render("I don't need her.", True, (255, 255, 255))
-        screen.blit(yesHelp1, (150, 560))
-        screen.blit(noHelp1, (355, 560))
+        yh1 = font3.render("Thank you..", True, (255, 255, 255))
+        nh1 = font3.render("I don't", True, (255, 255, 255))
+        nh2 = font3.render("need her.", True, (255, 255, 255))
+        screen.blit(yh1, (120, 570))
+        screen.blit(nh1, (330, 560))
+        screen.blit(nh2, (335, 580))
         pygame.display.update()
         scene = 2.74
 
@@ -989,12 +994,12 @@ while not done:
         dialogue("Mom, that’s rude. We already hired her. You should be grateful.", david)
         scene = 2.741
 
-    if scene == 2.7411 and event.type == pygame.MOUSEBUTTONDOWN:
+    if scene == 2.741 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("Fine.", you)
         scene = 2.74111
 
     if scene == 2.74111 and event.type == pygame.MOUSEBUTTONUP:
-        dialogue("Umm… my name is Ellen. I’ll be assisting you from now on.", unknown)
+        dialogue("Umm… my name is Ellen. I’ll be assisting you from now on.", preka)
         scene = 2.741111
 
     if scene == 2.741111 and event.type == pygame.MOUSEBUTTONDOWN:
@@ -1008,4 +1013,3 @@ while not done:
     if scene == 2.76 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("I’m sorry David. I must be such a huge burden on you… If only I could be a better mother…", thought)
         scene = 3
-
