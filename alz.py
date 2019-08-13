@@ -27,11 +27,12 @@ start = font2.render("click anywhere to continue", True, (56, 0, 113))
 # instantiating names for dialogue, **colors are subject to change**
 you = font2.render("You: ", True, (255, 255, 255))
 david = font2.render("David: ", True, (255, 255, 255))
-preka = font2.render("???: ", True, (255, 255, 255))
+unknown = font2.render("???: ", True, (255, 255, 255))
 kristyanne = font2.render("Kristy-Anne: ", True, (255, 255, 255))
 doctor = font2.render("Dr. Pineapple: ", True, (255, 255, 255))
 thought = font2.render(" ", True, (255, 255, 255))
-jacob = font2.render("Jacob", True, (255, 255, 255))
+jacob = font2.render("Jacob: ", True, (255, 255, 255))
+ellen = font2.render("Ellen: ", True, (255, 255, 255))
 
 # making yes and no buttons for act one scene 1
 yesDoc = pygame.Rect(75, 550, 150, 80)
@@ -179,7 +180,7 @@ while not done:
 
     # meeting Kristy-Anne scene
     if scene == 1.2 and event.type == pygame.MOUSEBUTTONDOWN:
-        dialogue("Oh hello! You must be my new neighbors. My name is Kristy-Anne. I just moved in next door.", preka)
+        dialogue("Oh hello! You must be my new neighbors. My name is Kristy-Anne. I just moved in next door.", unknown)
         scene = 1.21
 
     if scene == 1.21 and event.type == pygame.MOUSEBUTTONUP:
@@ -999,7 +1000,7 @@ while not done:
         scene = 2.74111
 
     if scene == 2.74111 and event.type == pygame.MOUSEBUTTONUP:
-        dialogue("Umm… my name is Ellen. I’ll be assisting you from now on.", preka)
+        dialogue("Umm… my name is Ellen. I’ll be assisting you from now on.", unknown)
         scene = 2.741111
 
     if scene == 2.741111 and event.type == pygame.MOUSEBUTTONDOWN:
