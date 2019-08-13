@@ -567,6 +567,9 @@ while not done:
         scene=2.191
     if scene == 2.191 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Thank you.",you)
+        scene=2.192
+    if scene==2.192 and event.type=pygame.MOUSEBUTTONDOWN:
+        screen.fill((0, 0, 0))
         scene=2.2
 
     # ACT2SCENE2(2.2)
