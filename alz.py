@@ -9,16 +9,18 @@ pygame.display.set_caption("Alzhemier's")
 clock = pygame.time.Clock()
 doctor1 = True
 # inserting image
-#David1 = pygame.image.load('david1.png')
-#gameDisplay.blit(David1, (x,y))
-
+'''
+test = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+gameDisplay.blit(test, (0,0))
+pygame.display.update()
+'''
 # Fonts
 font1 = pygame.font.SysFont("Monospace", 30)
 font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
 
 # sets scene to 0
-scene = 0.0
+scene = 2.253
 
 # words for opening page
 title = font1.render("Alzheimer's", True, (56, 0, 113))
@@ -110,6 +112,11 @@ while not done:
     # first scene of act one
     if(scene == 1.0 and event.type == pygame.MOUSEBUTTONDOWN):
         screen.fill((0, 0, 0))
+        '''
+        doctorQuesScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(doctorQuesScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("Mom, let's go to the doctor to check up on your health. I've noticed your memory has been a little off lately......", david)
 
         # drawing yes and no buttons (box only)
@@ -134,6 +141,11 @@ while not done:
     # what happens when the player chooses yes
     # diagnosis
     if scene == 1.01 and yesDoc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        '''
+        doctorScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(doctorScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("After testing, we can confirm that your mother has Alzheimer’s dementia.", doctor)
         scene = 1.11
     # medication
@@ -146,6 +158,11 @@ while not done:
         scene = 1.1111
     # car scene/going home
     if scene == 1.1111 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        carScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(carScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("*did David miss a turn?*", you)
         pygame.draw.rect(screen, (0, 0, 0), yesTurn)
         pygame.draw.rect(screen, (0, 0, 0), noTurn)
@@ -182,6 +199,11 @@ while not done:
 
     # meeting Kristy-Anne scene
     if scene == 1.2 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        neighborScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(neighborScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("Oh hello! You must be my new neighbors. My name is Kristy-Anne. I just moved in next door.", unknown)
         scene = 1.21
 
@@ -190,10 +212,19 @@ while not done:
         scene = 1.22
 
     if scene == 1.22 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        davidBlush = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(davidBlush, (0,0))
+        pygame.display.update()
+        '''
         dialogue("David’s face turns red and the girl giggles.", thought)
         scene = 1.23
 
     if scene == 1.23 and event.type == pygame.MOUSEBUTTONUP:
+        '''
+        gameDisplay.blit(neighborScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("Mom! You must be tired. Let’s get you inside.", david)
         scene = 1.24
 
@@ -226,6 +257,11 @@ while not done:
         scene = 1.33
 
     if scene == 1.33 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        livingRoomScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(livingRoomScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("What was her name again?", you)
         scene = 1.34
         pygame.draw.rect(screen, (0, 0, 0), claire)
@@ -324,6 +360,11 @@ while not done:
 
     # cactus scene
     if scene == 1.5 and event.type == pygame.MOUSEBUTTONUP:
+        '''
+        cactusScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(cactusScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("Here you go, David Jr. You look thirsty.", you)
         scene = 1.51
 
@@ -369,6 +410,11 @@ while not done:
 
     # alarm scene
     if scene == 1.6 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        alarm = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(alarm, (0,0))
+        pygame.display.update()
+        '''
         dialogue("BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP", thought)
         scene = 1.61
 
@@ -377,6 +423,11 @@ while not done:
         scene = 1.62
 
     if scene == 1.62 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        stoveScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(stoveScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("David runs into the kitchen and I follow him. He finds a pot on the stove with smoke coming out of it. After taking care of it, he walks towards me.", thought)
         scene = 1.63
 
@@ -483,6 +534,11 @@ while not done:
 
     # doctor's office
     if scene == 1.65 and event.type == pygame.MOUSEBUTTONUP:
+        '''
+        doctorScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(doctorScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("After testing, we can confirm that your mother has Alzheimer’s dementia.", doctor)
         scene = 1.651
 
@@ -495,6 +551,11 @@ while not done:
         scene = 1.65111
 
     if scene == 1.65111 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        carScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(carScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("David is driving us home... *did David miss a turn?*", thought)
         pygame.draw.rect(screen, (0, 0, 0), yesTurn)
         pygame.draw.rect(screen, (0, 0, 0), noTurn)
@@ -522,6 +583,11 @@ while not done:
         scene = 1.7
 
     if scene == 1.7 and event.type == pygame.MOUSEBUTTONUP:
+        '''
+        wedding = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(wedding, (0,0))
+        pygame.display.update()
+        '''
         dialogue("David and Kristy-Anne get married two years after meeting each other. They are so wonderful together, and I’m very happy for my son :)", thought)
         scene = 1.71
 
@@ -542,6 +608,11 @@ while not done:
     # MOUSEBUTTONS ARE SUBJECT TO CHANGE
     # ACT2SCENE1(2.1)(SHANNI)
     if scene == 2.11 and (event.type == pygame.MOUSEBUTTONDOWN):
+        '''
+        davAndKA = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(davAndKA, (0,0))
+        pygame.display.update()
+        '''
         screen.fill((0, 0, 0))
         dialogue("Mom! We’re back!", david)
         scene = 2.12
@@ -578,6 +649,11 @@ while not done:
 
     # ACT2SCENE2(2.2)
     if scene == 2.2 and event.type == pygame.MOUSEBUTTONUP:
+        '''
+        atDoor = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(atDoor, (0,0))
+        pygame.display.update()
+        '''
         screen.fill((0, 0, 0))
         dialogue("Mom, where are you going?", david)
         scene = 2.21
@@ -636,7 +712,6 @@ while not done:
     if scene == 2.2511111111 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("I will, mom. I’ll ask Kristy-Anne to keep you company while I’m out.", david)
         scene = 2.2512
-
     if scene == 2.2512 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("You think I can’t keep myself busy? I can read my book. I don’t want to bother your wife too much since she’s due soon.", you)
         scene = 2.2513
@@ -647,6 +722,11 @@ while not done:
         dialogue("Bye!", you)
         scene = 2.2515
     if scene == 2.2515 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        livingRoomWKA = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(livingRoomWKA, (0,0))
+        pygame.display.update()
+        '''
         dialogue("Kristy-Anne.", you)
         scene = 2.2516
     if scene == 2.2516 and event.type == pygame.MOUSEBUTTONUP:
@@ -677,6 +757,11 @@ while not done:
         dialogue("Ok… David should be here any moment now.", kristyanne)
         scene = 2.25196
     if scene == 2.25196 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        davAndKA = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(davAndKA, (0,0))
+        pygame.display.update()
+        '''
         dialogue("I’m home!", david)
         scene = 2.25197
     if scene == 2.25197 and event.type == pygame.MOUSEBUTTONUP:
@@ -698,9 +783,15 @@ while not done:
         dialogue("Of course, dear.", david)
         scene = 2.25184
     if scene == 2.25184 and event.type == pygame.MOUSEBUTTONUP:
+        screen.fill((0, 0, 0))
         dialogue("David and Kristy-Anne walk into another room. I can’t hear the things they’re saying, but it probably has to do with my memory loss. Or maybe she is unhappy with the conversation we just had. Oh… I suppose it was a little uncalled for…", thought)
         scene = 2.25185
     if scene == 2.25185 and event.type == pygame.MOUSEBUTTONDOWN:
+        '''
+        doctorQuesScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(doctorQuesScene, (0,0))
+        pygame.display.update()
+        '''
         dialogue("Mom?", david)
         scene = 2.25186
     if scene == 2.25186 and event.type == pygame.MOUSEBUTTONUP:
@@ -723,7 +814,6 @@ while not done:
         scene = 2.3
 
     # RIGHT
-
     if scene == 2.25 and noGroc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("Oh… ok. Just… give me a call if you need anything.",david)
         scene=2.2521
@@ -737,7 +827,7 @@ while not done:
         dialogue("I will be safe. The neighbors know about my condition. Plus you’re always one call away.",you)
         scene=2.2524
     if scene==2.2524 and event.type==pygame.MOUSEBUTTONDOWN:
-        dialogue("I know. I suppose I worry a bit too much. You have your wallet and phone?",you)
+        dialogue("I know. I suppose I worry a bit too much. You have your wallet and phone?",david)
         scene=2.2525
     if scene==2.2525 and event.type==pygame.MOUSEBUTTONUP:
         dialogue("Yes, David. I take extra care to have everything I need before I go out.",you)
@@ -749,9 +839,20 @@ while not done:
         dialogue("Bye",you)
         scene=2.253
     if scene==2.253 and event.type==pygame.MOUSEBUTTONDOWN:
-        dialogue("Hmm… I can’t seem to recall where I am now… Oh dear. Am I lost? That isn’t good… Do I make a right here? Or is it a left? Maybe I should call David… he’ll know what to do.",thought)
+        '''
+        outside = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        gameDisplay.blit(outside, (0,0))
+        pygame.display.update()
+        '''
+        dialogue("Hmm… I can’t seem to recall where I am now… Oh dear. Am I lost? That isn’t good…",thought)
+        scene = 2.25331
+    if scene == 2.25331 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Do I make a right here? Or is it a left? Maybe I should call David… he’ll know what to do.", thought)
+        scene = 2.25332
+    if scene == 2.25332 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Should I call David?", thought)
         pygame.draw.rect(screen, (0, 0, 0), yesCall)
-        pygame.draw.rect(screen, (0, 0, 0), NoCall)
+        pygame.draw.rect(screen, (0, 0, 0), noCall)
         call = font2.render("Call", True, (255, 255, 255))
         dCall = font2.render("Don't Call", True, (255, 255, 255))
         screen.blit(call, (130, 560))
@@ -765,7 +866,7 @@ while not done:
         dialogue("Hello? Mom?",david)
         scene=2.253122
     if scene==2.253122 and event.type==pygame.MOUSEBUTTONUP:
-        dialogue("David! I uh… can’t seem to recall where I am.",you）
+        dialogue("David! I uh… can’t seem to recall where I am.",you)
         scene=2.2531222
     if scene==2.2531222 and event.type==pygame.MOUSEBUTTONDOWN:
         dialogue("Oh. Tell me what street you’re on and I’ll come pick you up.",david)
@@ -833,7 +934,7 @@ while not done:
     if scene==2.25322222 and event.type==pygame.MOUSEBUTTONUP:
         dialogue("I know… I know.",you)
         scene=2.3
-                    
+
     # ACT2SCENE3(2.3)(SHANNI)
     if scene==2.3 and event.type==pygame.MOUSEBUTTONUP:
         screen.fill((0, 0, 0))
@@ -860,7 +961,7 @@ while not done:
         dialogue("Well, at least you’re up. Meet your grandson, Jacob! Isn’t he adorable?",kristyanne)
         scene=2.3222222
     if scene==2.3222222 and event.type==pygame.MOUSEBUTTONUP:
-        dialogue("Oh! He looks just like David when he was born. Oh, but he has your nose, Kristy-Anne.",you)
+        dialogue("Oh! He looks just like David when he was born. Oh, but he has your nose,  Kristy-Anne.",you)
         scene=2.32222222
     if scene==2.32222222 and event.type==pygame.MOUSEBUTTONDOWN:
         dialogue("David, I’m tired. I’ll take Jacob with me and put him in his crib. I should rest now so I’ll be able to take care of Jacob when he wakes up later.",kristyanne)
@@ -1235,7 +1336,7 @@ while not done:
     if scene == 3.214 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("I’m sorry, David. Seeing me like this must make you so sad and tired. I only wanted you to have a happy and healthy life.", thought)
         scene = 3.3
-        
+
     # ACT3SCENE3
     if scene == 3.3 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("There’s nothing… breathing is hard… how long has it been… I’m tired… I think…", thought)
@@ -1268,7 +1369,7 @@ while not done:
         screen.fill((0, 0, 0))
         dialogue("I wish I could tell you I love you.", thought)
         scene = 4
-    
+
     # ENDING CREDITS (4)
     if scene == 4 and event.type == pygame.MOUSEBUTTONUP:
         screen.fill((0, 0, 0))
