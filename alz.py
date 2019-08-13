@@ -30,9 +30,7 @@ david = font2.render("David: ", True, (255, 255, 255))
 preka = font2.render("???: ", True, (255, 255, 255))
 kristyanne = font2.render("Kristy-Anne: ", True, (255, 255, 255))
 doctor = font2.render("Dr. Pineapple: ", True, (255, 255, 255))
-ellen = font2.render("Ellen: ", True, (255, 255, 255))
 thought = font2.render(" ", True, (255, 255, 255))
-
 # making yes and no buttons for act one scene 1
 yesDoc = pygame.Rect(75, 550, 150, 80)
 noDoc = pygame.Rect(275, 550, 150, 80)
@@ -531,9 +529,9 @@ while not done:
         screen.fill((0, 0, 0))
         act2 = font1.render("ACT TWO", True, (255, 255, 255))
         moderate = font1.render("MODERATE (5 YEARS)", True, (255, 255, 255))
-        screen.blit(act2, ((500 - act2.get_width()) // 2, (600 - act2.get_height()) // 2))
+        screen.blit(act1, ((500 - act2.get_width()) // 2, (600 - act2.get_height()) // 2))
         pygame.draw.line(screen, (255, 255, 255), (150, 320), (350, 320), 1)
-        screen.blit(moderate, ((500 - moderate.get_width()) // 2, (600 - act2.get_height()) // 2 + 50))
+        screen.blit(mid, ((500 - moderate.get_width()) // 2, (600 - act2.get_height()) // 2 + 50))
         pygame.display.update()
         scene = 2.1
     # MOUSEBUTTONS ARE SUBJECT TO CHANGE
@@ -571,9 +569,121 @@ while not done:
         pygame.display.update()
         scene == 2.25
     # LEFT
+    if scene == 2.25 and yesGroc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Thank you, mom. I just don’t want you to get lost or carry the heavy groceries.", david)
+        scene = 2.251
+    if scene == 2.251 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("You’re the sweetest son I could ever ask for.", you)
+        scene = 2.2511
+    if scene == 2.2511 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("And you’re the best mom I could ask for. I’ll get my wallet, keys, and phone before heading out.", david)
+        scene = 2.25111
+    if scene == 2.25111 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh, and David. I don’t think I put this on the list, but get some of… the umm… tree looking vegetables.", you)
+        scene = 2.251111
+    if scene == 2.251111 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("You mean broccoli?", david)
+        scene = 2.2511111
+    if scene == 2.2511111 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Yes! Broccoli! It’s good for your eyes!", you)
+        scene == 2.25111111
+    if scene == 2.25111111 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("You’re talking about carrots, mom.", david)
+        scene = 2.251111111
+    if scene == 2.251111111 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh. Then get those too.", you)
+        scene = 2.2511111111
+    if scene == 2.2511111111 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I will, mom. I’ll ask Kristy-Anne to keep you company while I’m out.", david)
+        scene = 2.2512
+    if scene == 2.2512 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("You think I can’t keep myself busy? I can read my book. I don’t want to bother your wife too much since she’s due soon.", you)
+        scene = 2.1513
+    if scene == 2.2513 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Ok mom. I’ll be back soon.", david)
+        scene = 2.2514
+    if scene == 2.2514 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Bye!", you)
+        scene = 2.1515
+    if scene == 2.2515 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Kristy-Anne.", you)
+        scene = 2.2516
+    if scene == 2.2516 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Yes, mother?", kristyanne)
+        scene = 2.1517
+    if scene == 2.2517 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Where did David go? Isn’t he usually home by this time?", you)
+        scene = 2.2518
+    if scene == 2.2518 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh. He went to the store to buy groceries. Don’t you remember? He went instead of you.", kristyanne)
+        scene = 2.1519
+    if scene == 2.2519 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Oh… silly me. I must have forgotten. But… you don’t need to talk to me like that.", you)
+        scene = 2.25191
+    if scene == 2.25191 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Huh? What do you mean?", kristyanne)
+        scene = 2.15192
+    if scene == 2.25192 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Well, you should know by now that I’m not the best at remembering things. You shouldn’t be asking me if I remember things. Didn’t your parents teach you how to respect your in laws?", you)
+        scene = 2.25193
+    if scene == 2.25193 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh… I’m sorry. I didn’t mean it that way.", kristyanne)
+        scene = 2.15194
+    if scene == 2.25194 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I know, but you should be more careful of what you say.", you)
+        scene = 2.25195
+    if scene == 2.25195 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Ok… David should be here any moment now.", kristyanne)
+        scene = 2.15196
+    if scene == 2.25196 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I’m home!", david)
+        scene = 2.25197
+    if scene == 2.25197 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David! Welcome home! Kristy-Anne and I were just having a pleasant conversation.", you)
+        scene = 2.15198
+    if scene == 2.25198 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Mhm. Pleasant. Your mother really missed you.", kristyanne)
+        scene = 2.25199
+    if scene == 2.25199 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Oh, mom. I was only at the store.", david)
+        scene = 2.15181
+    if scene == 2.25181 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I know but I sort of… forgot.", you)
+        scene = 2.25182
+    if scene == 2.25182 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David. Could I… speak to you for a second?", kristyanne)
+        scene = 2.15183
+    if scene == 2.25183 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Of course, dear.", david)
+        scene = 2.25184
+    if scene == 2.25184 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David and Kristy-Anne walk into another room. I can’t hear the things they’re saying, but it probably has to do with my memory loss. Or maybe she is unhappy with the conversation we just had. Oh… I suppose it was a little uncalled for…", thought)
+        scene = 2.15185
+    if scene == 2.25185 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Mom?", david)
+        scene = 2.25186
+    if scene == 2.25186 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("David’s voice breaks my thoughts.", thought)
+        scene = 2.15187
+    if scene == 2.25187 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Yes, David?", you)
+        scene = 2.25188
+    if scene == 2.25188 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("I want you to get along with Kristy-Anne. You used to always dote on her.", david)
+        scene = 2.15189
+    if scene == 2.25189 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I know David… I’m not sure what’s wrong with me lately.", you)
+        scene = 2.25171
+    if scene == 2.25171 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Well, I know you’re a caring person, mom. I don’t think this condition will change that.", david)
+        scene = 2.15172
+    if scene == 2.25172 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("I hope not, David. I hope not…", you)
+        scene = 2.3
 
     # RIGHT
-
+    if scene == 2.25 and noGroc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
+        scene = 2.252
     # ACT2SCENE3(2.3)(SHANNI)
 
     # ACT2SCENE4(2.4)(VIVIAN)
@@ -583,7 +693,7 @@ while not done:
     if scene == 2.41 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("After a couple of minutes after I call her name, I hear the door to the bedroom creak open.", thought)
         scene = 2.42
-    if scene == 2.42 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 2.42 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Yes, mother?", kristyanne)
         scene = 2.43
     if scene == 2.43 and event.type == pygame.MOUSEBUTTONDOWN:
@@ -601,7 +711,7 @@ while not done:
     if scene == 2.47 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("After a few minutes of her rummaging through my closet, she sets down an outfit on my bed.", thought)
         scene = 2.48
-    if scene == 2.48 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 2.48 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Oh! It’s wonderful! Thank you so much, dear.", you)
         scene = 2.49
     if scene == 2.49 and event.type == pygame.MOUSEBUTTONDOWN:
@@ -655,7 +765,7 @@ while not done:
     if scene == 2.54 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("What? No, that’s not what I mean.", david)
         scene = 2.55
-    if scene == 2.55 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 2.55 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Well, that’s what it sounds like. What’s so wrong with some… some… shredded tissue? I’m so sorry that I… that… I get calm from making a mess.", you)
         scene = 2.56
     if scene == 2.56 and event.type == pygame.MOUSEBUTTONDOWN:
@@ -673,7 +783,7 @@ while not done:
     if scene == 2.511 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("As David runs off, I sit back down and stare at my pile of shredded tissue.", thought)
         scene = 2.512
-    if scene == 2.512 and noTurn.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 2.512 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("I suppose I shouldn’t have done this… I should… should… what’s the word… let’s get rid of it. I’m sorry David… I’m a mess… just like this one…", thought)
         scene = 2.6
 
@@ -745,8 +855,8 @@ while not done:
         screen.blit(noHelp1, (355, 560))
         pygame.display.update()
         scene = 2.74
-        
-    if scene == 2.74 and yesHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+
+    if scene == 2.74 and yesHelp1.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Hello, my name is Ellen. I’ll be assisting you from now on.", unknown)
         scene = 2.742
 
@@ -762,7 +872,7 @@ while not done:
         dialogue("She is only going to be here when Kristy-Anne and I are at work and a little longer.", david)
         scene = 2.75
 
-    if scene == 2.74 and noHelp.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 2.74 and noHelp1.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Mom, that’s rude. We already hired her. You should be grateful.", david)
         scene = 2.741
 
