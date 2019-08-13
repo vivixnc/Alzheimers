@@ -1,6 +1,6 @@
 import pygame
 import sys
-# https://www.soundjay.com/communication-sounds.html
+# http://www.soundjay.com/communication-sounds.html
 # second track
 # setting up window
 pygame.init()
@@ -12,7 +12,7 @@ doctor1 = True
 #David1 = pygame.image.load('david1.png')
 #gameDisplay.blit(David1, (x,y))
 
-# Fonts
+# Font
 font1 = pygame.font.SysFont("Monospace", 30)
 font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
