@@ -1234,7 +1234,7 @@ while not done:
 
     if scene == 3.214 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("I’m sorry, David. Seeing me like this must make you so sad and tired. I only wanted you to have a happy and healthy life.", thought)
-        scene == 3.3
+        scene = 3.3
         
     # ACT3SCENE3
     if scene == 3.3 and event.type == pygame.MOUSEBUTTONDOWN:
