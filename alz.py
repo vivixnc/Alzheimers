@@ -531,9 +531,9 @@ while not done:
         screen.fill((0, 0, 0))
         act2 = font1.render("ACT TWO", True, (255, 255, 255))
         moderate = font1.render("MODERATE (5 YEARS)", True, (255, 255, 255))
-        screen.blit(act1, ((500 - act2.get_width()) // 2, (600 - act2.get_height()) // 2))
+        screen.blit(act2, ((500 - act2.get_width()) // 2, (600 - act2.get_height()) // 2))
         pygame.draw.line(screen, (255, 255, 255), (150, 320), (350, 320), 1)
-        screen.blit(mid, ((500 - moderate.get_width()) // 2, (600 - act2.get_height()) // 2 + 50))
+        screen.blit(moderate, ((500 - moderate.get_width()) // 2, (600 - act2.get_height()) // 2 + 50))
         pygame.display.update()
         scene = 2.1
     # MOUSEBUTTONS ARE SUBJECT TO CHANGE
