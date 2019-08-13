@@ -30,7 +30,9 @@ david = font2.render("David: ", True, (255, 255, 255))
 preka = font2.render("???: ", True, (255, 255, 255))
 kristyanne = font2.render("Kristy-Anne: ", True, (255, 255, 255))
 doctor = font2.render("Dr. Pineapple: ", True, (255, 255, 255))
+ellen = font2.render("Ellen: ", True, (255, 255, 255))
 thought = font2.render(" ", True, (255, 255, 255))
+
 # making yes and no buttons for act one scene 1
 yesDoc = pygame.Rect(75, 550, 150, 80)
 noDoc = pygame.Rect(275, 550, 150, 80)
