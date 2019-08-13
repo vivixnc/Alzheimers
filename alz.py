@@ -1269,3 +1269,20 @@ while not done:
         screen.fill((0, 0, 0))
         dialogue("I wish I could tell you I love you.", thought)
         scene = 4
+    
+    # ENDING CREDITS (4)
+    if scene == 4 and event.type == pygame.MOUSEBUTTONUP:
+        screen.fill((0, 0, 0))
+        definition = font2.render("Alzheimer’s is a disease that affects the brain, causing the patient to lose their memory as well as basic function, such as speech, walking, and eating.", True, (255, 255, 255))
+        reminder = font2.render("Treat your family members with this disease with love and patience.", True, (255, 255, 255))
+        screen.blit(definition, (20, 200))
+        screen.blit(reminder, (20, 400))
+        pygame.display.update()
+        scene = 4.1
+
+    if scene == 4.1 and event.type == pygame.MOUSEBUTTONDOWN:
+        screen.fill((0, 0, 0))
+        credit = font2.render("Credits: "", True, (255, 255, 255))
+        names = font2.render("Vivian Chen Lam, Seonga Oh, Shanni Yu")
+        screen.blit(credit, ((500 - credit.get_width()) // 2, (600 - credit.get_height()) // 2))
+        screen.blit(names, ((500 - names.get_width()) // 2, (600 - son.get_height()) // 2 + 50))
