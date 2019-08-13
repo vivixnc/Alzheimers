@@ -40,8 +40,8 @@ claire = pygame.Rect(100, 550, 130, 50)
 catherine = pygame.Rect(300, 550, 130, 50)
 neighbor = pygame.Rect(100, 550, 130, 50)
 gf = pygame.Rect(300, 550, 130, 50)
-yesStove = pygame.Rect(100, 550, 150, 80)
-noStove = pygame.Rect(300, 550, 150, 80)
+yesStove = pygame.Rect(100, 550, 130, 50)
+noStove = pygame.Rect(300, 550, 130, 50)
 yesHelp = pygame.Rect(100, 550, 150, 80)
 noHelp = pygame.Rect(300, 550, 150, 80)
 yesGroc = pygame.Rect(75, 550, 150, 80)
@@ -622,7 +622,7 @@ while not done:
         scene = 2.2511111
     if scene == 2.2511111 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Yes! Broccoli! It’s good for your eyes!", you)
-        scene == 2.25111111
+        scene = 2.25111111
     if scene == 2.25111111 and event.type == pygame.MOUSEBUTTONDOWN:
         dialogue("You’re talking about carrots, mom.", david)
         scene = 2.251111111
