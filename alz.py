@@ -1236,3 +1236,36 @@ while not done:
     if scene == 3.214 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("I’m sorry, David. Seeing me like this must make you so sad and tired. I only wanted you to have a happy and healthy life.", thought)
         scene == 3.3
+        
+    # ACT3SCENE3
+    if scene == 3.3 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("There’s nothing… breathing is hard… how long has it been… I’m tired… I think…", thought)
+        scene = 3.31
+
+    if scene == 3.31 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Mom… please… just one answer... Please… you can’t leave, not yet… I’m not ready for that…", unknown)
+        scene = 3.32
+
+    if scene == 3.32 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("Who? A strange man is at the side of my bed.", thought)
+        scene = 3.33
+
+    if scene == 3.33 and event.type == pygame.MOUSEBUTTONUP:
+        dialogue("Mom… I love you… I always will…", unknown)
+        scene = 3.34
+
+    if scene == 3.34 and event.type == pygame.MOUSEBUTTONDOWN:
+        dialogue("This man… he’s important to me. His voice makes my heart happy. But I can’t remember… who is he? Oh, that’s right. He is", thought)
+        scene = 3.35
+
+    if scene == 3.35 and event.type == pygame.MOUSEBUTTONUP:
+        screen.fill((0, 0, 0))
+        son = font1.render("my son", True, (255, 255, 255))
+        screen.blit(son, ((500 - son.get_width()) // 2, (600 - son.get_height()) // 2))
+        pygame.display.update()
+        scene = 3.36
+
+    if scene == 3.36 and event.type == pygame.MOUSEBUTTONDOWN:
+        screen.fill((0, 0, 0))
+        dialogue("I wish I could tell you I love you.", thought)
+        scene = 4
