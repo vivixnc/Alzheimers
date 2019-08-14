@@ -82,7 +82,20 @@ def dialogue(line, speaker):
         pygame.display.flip()
         pygame.time.wait(30)
     pygame.mixer.music.stop()
-
+def dialogueCredit(line):
+    x = 40
+    y = 170
+    i = 0
+    for i in range (len(line)):
+        if(x >= 400 and line[i-1] == " "):
+            x = 40
+            y += 30
+        else:
+            x += 10
+        letter = font3.render(line[i], True, (255, 255, 255))
+        screen.blit(letter, (x, y))
+        pygame.display.flip()
+        pygame.time.wait(100)
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -1385,18 +1398,28 @@ while not done:
         scene = 4
 
     # ENDING CREDITS (4)
-    if scene == 4 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+     if scene == 4 and event.type == pygame.MOUSEBUTTONUP:
         screen.fill((0, 0, 0))
+        dialogueCredit("Alzheimer’s is a disease that affects the brain, causing the patient to lose their memory as well as basic function, such as speech, walking, and eating.                                      Treat your family members with this disease with love and patience.")
+  
+        '''
         definition = font2.render("Alzheimer’s is a disease that affects the brain, causing the patient to lose their memory as well as basic function, such as speech, walking, and eating.", True, (255, 255, 255))
         reminder = font2.render("Treat your family members with this disease with love and patience.", True, (255, 255, 255))
         screen.blit(definition, (20, 200))
         screen.blit(reminder, (20, 400))
+        '''
         pygame.display.update()
         scene = 4.1
 
-    if scene == 4.1 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+    if scene == 4.1 and event.type == pygame.MOUSEBUTTONDOWN:
         screen.fill((0, 0, 0))
         credit = font2.render("Credits: ", True, (255, 255, 255))
-        names = font2.render("Vivian Chen Lam, Seonga Oh, Shanni Yu")
+        names = font2.render("Vivian Chen Lam, Seonga Oh, Shanni Yu",True, (255, 255, 255))
         screen.blit(credit, ((500 - credit.get_width()) // 2, (600 - credit.get_height()) // 2))
-        screen.blit(names, ((500 - names.get_width()) // 2, (600 - son.get_height()) // 2 + 50))
+        screen.blit(names, ((500 - names.get_width()) // 2, (600 - names.get_height()) // 2 + 50))
+        pygame.display.update()
+        pygame.display.set_caption('End credits')
+        screen = pygame.display.set_mode((800, 600))
+        screen_r = screen.get_rect()
+        font = pygame.font.SysFont("Arial", 40)
+        clock = pygame.time.Clock()
