@@ -19,8 +19,8 @@ font3 = pygame.font.SysFont("Monospace", 15)
 scene = 0.0
 
 # words for opening page
-title = font1.render("Alzheimer's", True, (56, 0, 113))
-start = font2.render("press space to continue", True, (56, 0, 113))
+title = font1.render("Alzheimer's", True, (0, 0, 0))
+start = font2.render("press space to continue", True, (0, 0, 0))
 
 # instantiating names for dialogue, **colors are subject to change**
 you = font2.render("You: ", True, (255, 255, 255))
@@ -82,6 +82,7 @@ def dialogue(line, speaker):
         pygame.display.flip()
         pygame.time.wait(30)
     pygame.mixer.music.stop()
+
 def dialogueCredit(line):
     x = 40
     y = 170
@@ -95,7 +96,8 @@ def dialogueCredit(line):
         letter = font3.render(line[i], True, (255, 255, 255))
         screen.blit(letter, (x, y))
         pygame.display.flip()
-        pygame.time.wait(100)
+        pygame.time.wait(60)
+
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -106,14 +108,16 @@ while not done:
     mousePos = pygame.mouse.get_pos()
     # opening title screen
     if(scene == 0.0):
-        screen.fill((0, 0, 0))
+        opening = pygame.image.load('mmexport15657374020671.jpg')
+        screen.blit(opening, (0, 0))
+        pygame.display.update()
         screen.blit(title, ((500 - title.get_width()) // 2, (600 - title.get_height()) // 2))
         screen.blit(start, ((500 - start.get_width()) // 2, (600 - start.get_height()) // 2 + 30))
         pygame.display.update()
-
+        scene = 0.01
     # when the user clicks opening screen
     # act 1 opening screen appears
-    if(scene == 0.0 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE):
+    if(scene == 0.01 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE):
         screen.fill((0, 0, 0))
         act1 = font1.render("ACT ONE", True, (255, 255, 255))
         mid = font1.render("MID (2 YEARS)", True, (255, 255, 255))
@@ -175,7 +179,7 @@ while not done:
         scene = 1.1111
     # car scene/going home
     if scene == 1.1111 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        screenfill((0, 0, 0))
+        screen.fill((0, 0, 0))
         scene = 1.01111
     if scene == 1.01111 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
         carScene = pygame.image.load('scene 3.png')
@@ -223,7 +227,7 @@ while not done:
         screen.fill((0, 0, 0))
         afterWalk = font2.render("After the walk", True, (255, 255, 255))
         screen.blit(afterWalk, ((500 - afterWalk.get_width() // 2), (600 -afterWalk.get_height() // 2)))
-        screen.display.update()
+        pygame.display.update()
         scene = 1.201
     if scene == 1.201 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
         '''
@@ -318,7 +322,7 @@ while not done:
         screen.fill((0, 0, 0))
         unoMonth = font2.render("One month later", True, (255, 255, 255))
         screen.blit(unoMonth, ((500 - unoMonth // 2), (600 - unoMonth // 2)))
-        screen.display.update()
+        pygame.display.update()
         if doctor1 == True:
             scene = 1.41
         else:
@@ -695,8 +699,8 @@ while not done:
         scene = 2.24
     if scene == 2.24 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
         dialogue("I insist, mom. We have our daily walks for that purpose.", david)
-        pygame.draw.rect(screen, [180, 180, 180], yesGroc)
-        pygame.draw.rect(screen, [180, 180, 180], noGroc)
+        pygame.draw.rect(screen, [220, 220, 220], yesGroc)
+        pygame.draw.rect(screen, [220, 220, 220], noGroc)
         yg1 = font3.render("Oh, alright. Get", True, (199, 167, 255))
         yg2 = font3.render("the prettiest", True, (199, 167, 255))
         yg3 = font3.render("flowers there", True, (199, 167, 255))
@@ -878,8 +882,8 @@ while not done:
         scene = 2.25332
     if scene == 2.25332 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
         dialogue("Should I call David?", thought)
-        pygame.draw.rect(screen, (180, 180, 180), yesCall)
-        pygame.draw.rect(screen, (180, 180, 180), noCall)
+        pygame.draw.rect(screen, (220, 220, 220), yesCall)
+        pygame.draw.rect(screen, (220, 220, 220), noCall)
         call = font2.render("Call", True, (199, 167, 255))
         dCall = font2.render("Don't Call", True, (199, 167, 255))
         screen.blit(call, (130, 560))
@@ -1072,8 +1076,8 @@ while not done:
         scene = 2.49
     if scene == 2.49 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
         dialogue("Don’t mention it. Would you like me to do this everyday from now on?", kristyanne)
-        pygame.draw.rect(screen, (180, 180, 180), yesHelp)
-        pygame.draw.rect(screen, (180, 180, 180), noHelp)
+        pygame.draw.rect(screen, (220, 220, 220), yesHelp)
+        pygame.draw.rect(screen, (220, 220, 220), noHelp)
         yh = font2.render("yes", True, (199, 167, 255))
         nh = font2.render("no", True, (199, 167, 255))
         screen.blit(yh, (120, 560))
@@ -1203,8 +1207,8 @@ while not done:
 
     if scene == 2.73 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
         dialogue("Oh…", you)
-        pygame.draw.rect(screen, (180, 180, 180), yesHelp1)
-        pygame.draw.rect(screen, (180, 180, 180), noHelp1)
+        pygame.draw.rect(screen, (220, 220, 220), yesHelp1)
+        pygame.draw.rect(screen, (220, 220, 220), noHelp1)
         yh1 = font3.render("Thank you..", True, (199, 167, 255))
         nh1 = font3.render("I don't", True, (199, 167, 255))
         nh2 = font3.render("need her.", True, (199, 167, 255))
@@ -1382,44 +1386,43 @@ while not done:
         scene = 3.34
 
     if scene == 3.34 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        dialogue("This man… he’s important to me. His voice makes my heart happy. But I can’t remember… who is he? Oh, that’s right. He is", thought)
+        dialogue("This man… he’s important to me. His voice makes my heart happy. But I can’t remember… who is he? Oh, that’s right.", thought)
         scene = 3.35
 
     if scene == 3.35 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        screen.fill((0, 0, 0))
-        son = font1.render("my son", True, (255, 255, 255))
-        screen.blit(son, ((500 - son.get_width()) // 2, (600 - son.get_height()) // 2))
+        end1 = pygame.image.load('mmexport1565742125774.jpg')
+        screen.blit(end1, (0,0))
         pygame.display.update()
+        dialogue("He is my son")
         scene = 3.36
 
     if scene == 3.36 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        screen.fill((0, 0, 0))
-        dialogue("I wish I could tell you I love you.", thought)
+        end2 = pygame.image.load('mmexport1565737402067.jpg')
+        screen.blit(end2, (0,0))
+        pygame.display.update()
+        dialogue("I wish I could tell you ", thought)
+        scene = 3.37
+
+    if scene == 3.37 and event.type == pygame.MOUSEBUTTONUP:
+        end3 = pygame.image.load('mmexport1565737404135.jpg')
+        screen.blit(end3, (0,0))
+        pygame.display.update()
+        dialogue("how much I love you", thought)
         scene = 4
 
     # ENDING CREDITS (4)
-     if scene == 4 and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 4 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
         screen.fill((0, 0, 0))
-        dialogueCredit("Alzheimer’s is a disease that affects the brain, causing the patient to lose their memory as well as basic function, such as speech, walking, and eating.                                      Treat your family members with this disease with love and patience.")
-  
-        '''
-        definition = font2.render("Alzheimer’s is a disease that affects the brain, causing the patient to lose their memory as well as basic function, such as speech, walking, and eating.", True, (255, 255, 255))
-        reminder = font2.render("Treat your family members with this disease with love and patience.", True, (255, 255, 255))
-        screen.blit(definition, (20, 200))
-        screen.blit(reminder, (20, 400))
-        '''
-        pygame.display.update()
+        dialogueCredit("Alzheimer’s is a disease that affects the brain, causing the patient to lose their memory as well as basic function, such as speech, walking, and eating.                                     Treat your family members with this disease with love and patience.")
         scene = 4.1
 
-    if scene == 4.1 and event.type == pygame.MOUSEBUTTONDOWN:
+    if scene == 4.1 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
         screen.fill((0, 0, 0))
         credit = font2.render("Credits: ", True, (255, 255, 255))
-        names = font2.render("Vivian Chen Lam, Seonga Oh, Shanni Yu",True, (255, 255, 255))
-        screen.blit(credit, ((500 - credit.get_width()) // 2, (600 - credit.get_height()) // 2))
-        screen.blit(names, ((500 - names.get_width()) // 2, (600 - names.get_height()) // 2 + 50))
-        pygame.display.update()
-        pygame.display.set_caption('End credits')
-        screen = pygame.display.set_mode((800, 600))
-        screen_r = screen.get_rect()
-        font = pygame.font.SysFont("Arial", 40)
-        clock = pygame.time.Clock()
+        v = font2.render("Vivian Chen Lam",True, (255, 255, 255))
+        se = font2.render("Seonga Oh", True, (255, 255, 255))
+        sh = font2.render("Shanni Yu", True, (255, 255, 255))
+        screen.blit(credit, ((500 - credit.get_width()) // 2, (600 - credit.get_height()) // 2 - 100))
+        screen.blit(v, ((500 - v.get_width()) // 2, (600 - v.get_height()) // 2 + 90))
+        screen.blit(se, ((500 - se.get_width()) // 2, (600 - se.get_height()) // 2 + 140))
+        screen.blit(sh, ((500 - sh.get_width()) // 2, (600 - sh.get_height()) // 2 + 190))
