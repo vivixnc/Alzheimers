@@ -1391,14 +1391,14 @@ while not done:
         scene = 3.36
 
     if scene == 3.36 and event.type == pygame.MOUSEBUTTONDOWN:
-        end2 = pygame.image.load('mmexport1565737402067.jpg')
+        end2 = pygame.image.load('mmexport1565737404135.jpg')
         screen.blit(end2, (0,0))
         pygame.display.update()
         dialogue("I wish I could tell you ", thought)
         scene = 3.37
 
     if scene == 3.37 and event.type == pygame.MOUSEBUTTONUP:
-        end3 = pygame.image.load('mmexport1565737404135.jpg')
+        end3 = pygame.image.load('mmexport1565737402067.jpg')
         screen.blit(end3, (0,0))
         pygame.display.update()
         dialogue("how much I love you", thought)
