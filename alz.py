@@ -22,9 +22,9 @@ font3 = pygame.font.SysFont("Monospace", 15)
 # sets scene to 0
 scene = 0.0
 
-# words for opening page
-title = font1.render("Alzheimer's", True, (56, 0, 113))
-start = font2.render("click anywhere to continue", True, (56, 0, 113))
+# words for opening page 56, 0, 113
+title = font1.render("Alzheimer's", True, (0, 0, 0))
+start = font2.render("click anywhere to continue", True, (0, 0, 0))
 
 # instantiating names for dialogue, **colors are subject to change**
 you = font2.render("You: ", True, (255, 255, 255))
@@ -60,11 +60,11 @@ done = False
 
 def dialogue(line, speaker):
     if scene < 2 and scene > 0:
-        pygame.draw.rect(screen, (199, 167, 240), (0, 400, 500, 700), 0)
+        pygame.draw.rect(screen, (207, 214, 255), (0, 400, 500, 700), 0)
     elif scene > 1.9999 and scene < 3:
-        pygame.draw.rect(screen, (199, 167, 255), (0, 400, 500, 700), 0)
+        pygame.draw.rect(screen, (164, 148, 255), (0, 400, 500, 700), 0)
     elif scene > 3 and scene < 3.35:
-        pygame.draw.rect(screen, (134, 40, 216), (0, 400, 500, 700), 0)
+        pygame.draw.rect(screen, (112, 105, 255), (0, 400, 500, 700), 0)
     elif scene > 3.34:
         pygame.draw.rect(screen, (199, 167, 240), (0, 400, 500, 700), 0)
     screen.blit(speaker, (30, 420))
@@ -114,14 +114,17 @@ while not done:
     mousePos = pygame.mouse.get_pos()
     # opening title screen
     if(scene == 0.0):
-        screen.fill((0, 0, 0))
+        # screen.fill((0, 0, 0))
+        opening = pygame.image.load('mmexport15657374020671.jpg')
+        screen.blit(opening, (0,0))
+        pygame.display.update()
         screen.blit(title, ((500 - title.get_width()) // 2, (600 - title.get_height()) // 2))
         screen.blit(start, ((500 - start.get_width()) // 2, (600 - start.get_height()) // 2 + 30))
         pygame.display.update()
-
+        scene = 0.1
     # when the user clicks opening screen
     # act 1 opening screen appears
-    if(scene == 0.0 and event.type == pygame.MOUSEBUTTONUP):
+    if(scene == 0.1 and event.type == pygame.MOUSEBUTTONUP):
         screen.fill((0, 0, 0))
         act1 = font1.render("ACT ONE", True, (255, 255, 255))
         mid = font1.render("MID (2 YEARS)", True, (255, 255, 255))
