@@ -9,12 +9,7 @@ pygame.display.set_caption("Alzhemier's")
 clock = pygame.time.Clock()
 doctor1 = True
 pygame.key.set_repeat(1, 200)
-# inserting image
-'''
-test = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-gameDisplay.blit(test, (0,0))
-pygame.display.update()
-'''
+
 # Fonts
 font1 = pygame.font.SysFont("Monospace", 30)
 font2 = pygame.font.SysFont("Monospace", 20)
@@ -119,11 +114,9 @@ while not done:
     # first scene of act one
     if(scene == 1.0 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE):
         screen.fill((0, 0, 0))
-        '''
-        doctorQuesScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(doctorQuesScene, (0,0))
+        doctorQuesScene = pygame.image.load('scene 1.png')
+        screen.blit(doctorQuesScene, (0,0))
         pygame.display.update()
-        '''
         dialogue("Mom, let's go to the doctor to check up on your health. I've noticed your memory has been a little off lately......", david)
 
         # drawing yes and no buttons (box only)
@@ -154,11 +147,9 @@ while not done:
         pygame.display.update()
         scene = 1.001
     if scene == 1.001 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        '''
-        doctorScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(doctorScene, (0,0))
+        doctorScene = pygame.image.load('scene 2.png')
+        screen.blit(doctorScene, (0,0))
         pygame.display.update()
-        '''
         dialogue("After testing, we can confirm that your mother has Alzheimer’s dementia.", doctor)
         scene = 1.11
     # medication
@@ -174,11 +165,9 @@ while not done:
         screenfill((0, 0, 0))
         scene = 1.01111
     if scene == 1.01111 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        '''
-        carScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(carScene, (0,0))
+        carScene = pygame.image.load('scene 3.png')
+        screen.blit(carScene, (0,0))
         pygame.display.update()
-        '''
         dialogue("*did David miss a turn?*", you)
         pygame.draw.rect(screen, (255, 255, 255), yesTurn)
         pygame.draw.rect(screen, (255, 255, 255), noTurn)
@@ -393,11 +382,9 @@ while not done:
 
     # cactus scene
     if scene == 1.5 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        '''
-        cactusScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(cactusScene, (0,0))
+        cactusScene = pygame.image.load('scene 4.png')
+        screen.blit(cactusScene, (0,0))
         pygame.display.update()
-        '''
         dialogue("Here you go, David Jr. You look thirsty.", you)
         scene = 1.51
 
@@ -443,11 +430,9 @@ while not done:
 
     # alarm scene
     if scene == 1.6 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        '''
-        alarm = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(alarm, (0,0))
+        alarm = pygame.image.load('scene 5.png')
+        screen.blit(alarm, (0,0))
         pygame.display.update()
-        '''
         dialogue("BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP", thought)
         scene = 1.61
 
@@ -567,11 +552,9 @@ while not done:
 
     # doctor's office
     if scene == 1.65 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        '''
-        doctorScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(doctorScene, (0,0))
+        doctorScene = pygame.image.load('scene 2.png')
+        screen.blit(doctorScene, (0,0))
         pygame.display.update()
-        '''
         dialogue("After testing, we can confirm that your mother has Alzheimer’s dementia.", doctor)
         scene = 1.651
 
@@ -584,11 +567,9 @@ while not done:
         scene = 1.65111
 
     if scene == 1.65111 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-        '''
-        carScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(carScene, (0,0))
+        carScene = pygame.image.load('scene 4.png')
+        screen.blit(carScene, (0,0))
         pygame.display.update()
-        '''
         dialogue("David is driving us home... *did David miss a turn?*", thought)
         pygame.draw.rect(screen, (255, 255, 255), yesTurn)
         pygame.draw.rect(screen, (255, 255, 255), noTurn)
