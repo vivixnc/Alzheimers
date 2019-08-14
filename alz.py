@@ -1384,7 +1384,9 @@ while not done:
         scene = 3.35
 
     if scene == 3.35 and event.type == pygame.MOUSEBUTTONUP:
-        # baby pic
+        end1 = pygame.image.load('mmexport1565742125774.jpg')
+        screen.blit(end1, (0,0))
+        pygame.display.update()
         dialogue("He is my son", thought)
         scene = 3.36
 
