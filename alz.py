@@ -197,7 +197,7 @@ while not done:
         scene = 1.2
 
     # what happens when the player chooses no
-    if scene == 1.01 and noDoc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+    if scene == 1.01 and noDoc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONDOWN:
         screen.fill((0, 0, 0))
         scene = 1.02
     if scene == 1.02 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
