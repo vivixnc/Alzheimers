@@ -318,7 +318,7 @@ while not done:
     if scene == 1.37 and event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
         screen.fill((0, 0, 0))
         unoMonth = font2.render("One month later", True, (255, 255, 255))
-        screen.blit(unoMonth, ((500 - unoMonth // 2), (600 - unoMonth // 2)))
+        screen.blit(unoMonth, ((500 - unoMonth // 2), (600 - unoMonth // 2))
         pygame.display.update()
         if doctor1 == True:
             scene = 1.41
