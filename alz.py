@@ -22,14 +22,14 @@ title = font1.render("Alzheimer's", True, (0, 0, 0))
 start = font2.render("click anywhere to continue", True, (0, 0, 0))
 
 # instantiating names for dialogue, **colors are subject to change**
-you = font2.render("You: ", True, (255, 255, 255))
-david = font2.render("David: ", True, (255, 255, 255))
-unknown = font2.render("???: ", True, (255, 255, 255))
-kristyanne = font2.render("Kristy-Anne: ", True, (255, 255, 255))
-doctor = font2.render("Dr. Pineapple: ", True, (255, 255, 255))
-thought = font2.render(" ", True, (255, 255, 255))
-jacob = font2.render("Jacob: ", True, (255, 255, 255))
-ellen = font2.render("Ellen: ", True, (255, 255, 255))
+you = font2.render("You: ", True, (0, 0, 0))
+david = font2.render("David: ", True, (0, 0, 0))
+unknown = font2.render("???: ", True, (0, 0, 0))
+kristyanne = font2.render("Kristy-Anne: ", True, (0, 0, 0))
+doctor = font2.render("Dr. Pineapple: ", True, (0, 0, 0))
+thought = font2.render(" ", True, (0, 0, 0))
+jacob = font2.render("Jacob: ", True, (0, 0, 0))
+ellen = font2.render("Ellen: ", True, (0, 0, 0))
 
 # making yes and no buttons for act one scene 1
 yesDoc = pygame.Rect(75, 550, 150, 80)
@@ -78,7 +78,7 @@ def dialogue(line, speaker):
             y += 30
         else:
             x += 10
-        letter = font3.render(line[i], True, (255, 255, 255))
+        letter = font3.render(line[i], True, (0, 0, 0))
         screen.blit(letter, (x, y))
         pygame.display.flip()
         pygame.time.wait(30)
