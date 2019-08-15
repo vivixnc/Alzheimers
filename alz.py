@@ -15,7 +15,7 @@ font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
 
 # sets scene to 0
-scene = 2.33
+scene = 2.5
 
 # words for opening page 56, 0, 113
 title = font1.render("Alzheimer's", True, (0, 0, 0))
@@ -224,11 +224,9 @@ while not done:
         scene = 1.22
 
     if scene == 1.22 and event.type == pygame.MOUSEBUTTONDOWN:
-        '''
-        davidBlush = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(davidBlush, (0,0))
+        davidBlush = pygame.image.load('blushing david_1.jpg')
+        screen.blit(davidBlush, (0,0))
         pygame.display.update()
-        '''
         dialogue("David’s face turns red and the girl giggles.", thought)
         scene = 1.23
 
@@ -841,11 +839,9 @@ while not done:
         dialogue("Bye",you)
         scene=2.253
     if scene==2.253 and event.type==pygame.MOUSEBUTTONDOWN:
-        '''
-        street = pygame.image.load('il_794xN.919742521_fmvi.jpg')
+        street = pygame.image.load('street.jpg')
         screen.blit(street, (0,0))
         pygame.display.update()
-        '''
         dialogue("Hmm… I can’t seem to recall where I am now… Oh dear. Am I lost? That isn’t good…",thought)
         scene = 2.25331
     if scene == 2.25331 and event.type == pygame.MOUSEBUTTONUP:
@@ -895,7 +891,9 @@ while not done:
         dialogue("David?",you)
         scene=2.2531333
     if scene==2.2531333 and event.type==pygame.MOUSEBUTTONDOWN:
-        # david next to car
+        davidCar = pygame.image.load('david by car.jpg')
+        screen.blit(davidCar, (0, 0))
+        pygame.display.update()
         dialogue("Yes mom. I’m here to pick you up.",david)
         scene=2.25313333
     if scene==2.25313333 and event.type==pygame.MOUSEBUTTONUP:
@@ -957,7 +955,9 @@ while not done:
         dialogue("Let’s check her room. Maybe she’s waiting for us there.Mom? Mom, wake up.",david)
         scene=2.32
     if scene==2.32 and event.type==pygame.MOUSEBUTTONUP:
-        # bedroom
+        jacobBorn = pygame.image.load('jacob is born_1.jpg')
+        screen.blit(jacobBorn, (0, 0))
+        pygame.display.update()
         dialogue("Huh? Is it morning already?",you)
         scene=2.322
     if scene==2.322 and event.type==pygame.MOUSEBUTTONDOWN:
@@ -967,7 +967,6 @@ while not done:
         dialogue("4? All I know is I was really tired, so I went to bed. I don’t remember what time I slept though…",you)
         scene=2.32222
     if scene==2.32222 and event.type==pygame.MOUSEBUTTONDOWN:
-        # jacob
         dialogue("Well, at least you’re up. Meet your grandson, Jacob! Isn’t he adorable?",kristyanne)
         scene=2.3222222
     if scene==2.3222222 and event.type==pygame.MOUSEBUTTONUP:
@@ -1030,7 +1029,9 @@ while not done:
 
     # ACT2SCENE4(2.4)(VIVIAN)
     if scene == 2.4 and event.type == pygame.MOUSEBUTTONUP:
-        # closet
+        closet = pygame.image.load('bad closet_1.jpg')
+        screen.blit(closet, (0, 0))
+        pygame.display.update()
         dialogue("Kristy-Anne! Could you come to my room for a bit?", you)
         scene = 2.41
     if scene == 2.41 and event.type == pygame.MOUSEBUTTONDOWN:
@@ -1043,7 +1044,9 @@ while not done:
         dialogue("Over here, in the closet.", you)
         scene = 2.44
     if scene == 2.44 and event.type == pygame.MOUSEBUTTONUP:
-        # ka by door
+        peekingka = pygame.image.load('peaking ka_1.jpg')
+        screen.blit(peekingka, (0, 0))
+        pygame.display.update()
         dialogue("What are you doing here, mother?", kristyanne)
         scene = 2.45
     if scene == 2.45 and event.type == pygame.MOUSEBUTTONDOWN:
@@ -1053,14 +1056,15 @@ while not done:
         dialogue("Oh, of course I can.", kristyanne)
         scene = 2.47
     if scene == 2.47 and event.type == pygame.MOUSEBUTTONDOWN:
-        # clothes
+        clothes = pygame.image.load('skirt cameo_1.jpg')
+        screen.blit(clothes, (0, 0))
+        pygame.display.update()
         dialogue("After a few minutes of her rummaging through my closet, she sets down an outfit on my bed.", thought)
         scene = 2.48
     if scene == 2.48 and event.type == pygame.MOUSEBUTTONUP:
         dialogue("Oh! It’s wonderful! Thank you so much, dear.", you)
         scene = 2.49
     if scene == 2.49 and event.type == pygame.MOUSEBUTTONDOWN:
-        # ka by the door
         dialogue("Don’t mention it. Would you like me to do this everyday from now on?", kristyanne)
         pygame.draw.rect(screen, (220, 220, 220), yesHelp)
         pygame.draw.rect(screen, (220, 220, 220), noHelp)
@@ -1092,13 +1096,14 @@ while not done:
         dialogue("It’s the least I can do.", kristyanne)
         scene = 2.415
     if scene == 2.415 and event.type == pygame.MOUSEBUTTONUP:
-        # clothes on bed
         dialogue("As she leaves, I stare at the clothes she laid out for me. I can’t even choose my own clothes anymore… what has become of me?", thought)
         scene = 2.5
 
     # ACT2SCENE5(2.5)(VIVIAN)
     if scene == 2.5 and event.type == pygame.MOUSEBUTTONDOWN:
-        # tissues and david
+        tissueD = pygame.image.load('david with tissue.jpg')
+        screen.blit(tissueD, (0, 0))
+        pygame.display.update()
         dialogue("Mom! What are you doing?! You made a mess!", david)
         scene = 2.51
     if scene == 2.51 and event.type == pygame.MOUSEBUTTONUP:
@@ -1129,7 +1134,9 @@ while not done:
         dialogue("He probably got upset by our argument. I’m sorry mom. I’ll go check on him.", david)
         scene = 2.511
     if scene == 2.511 and event.type == pygame.MOUSEBUTTONDOWN:
-        # just tissues
+        tissues = pygame.image.load('tissue couch_1.jpg')
+        screen.blit(tissues, (0, 0))
+        pygame.display.update()
         dialogue("As David runs off, I sit back down and stare at my pile of shredded tissue.", thought)
         scene = 2.512
     if scene == 2.512 and event.type == pygame.MOUSEBUTTONUP:
@@ -1138,7 +1145,9 @@ while not done:
 
     # ACT2SCENE6(2.6)(SEONGA)
     if scene == 2.6 and event.type == pygame.MOUSEBUTTONDOWN:
-        # jacob eating something
+        jacobLeaf = pygame.image.load('jacob and the leaf_1.jpg')
+        screen.blit(jacobLeaf, (0, 0))
+        pygame.display.update()
         dialogue("Jacob! Don’t eat that! That’s dirty!", you)
         scene = 2.61
 
@@ -1151,7 +1160,9 @@ while not done:
         scene = 2.63
 
     if scene == 2.63 and event.type == pygame.MOUSEBUTTONUP:
-        # jacob confused (question mark)
+        jacobConf = pygame.image.load('jacob and the questions_1.jpg')
+        screen.blit(jacobConf, (0, 0))
+        pygame.display.update()
         dialogue("Day bid?... dada?", jacob)
         scene = 2.64
 
@@ -1160,6 +1171,7 @@ while not done:
         scene = 2.64
 
     if scene == 2.64 and event.type == pygame.MOUSEBUTTONUP:
+        davidDoor = pygame.image.load('david and the door_1.jpg2')
         screen.blit(davidDoor, (0, 0))
         pygame.display.update()
         dialogue("Mom? Did you call me?", david)
