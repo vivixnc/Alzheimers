@@ -15,7 +15,7 @@ font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
 
 # sets scene to 0
-scene = 0.0
+scene = 2.33
 
 # words for opening page 56, 0, 113
 title = font1.render("Alzheimer's", True, (0, 0, 0))
@@ -251,7 +251,9 @@ while not done:
         scene = 1.3
 
     if scene == 1.3 and event.type == pygame.MOUSEBUTTONUP:
-        # david livingroom
+        davidDoor = pygame.image.load('david and the door_1.jpg')
+        screen.blit(davidDoor, (0, 0))
+        pygame.display.update()
         dialogue("Mom, that was an unnecessary comment.", david)
         scene = 1.31
 
@@ -268,11 +270,9 @@ while not done:
         scene = 1.33
 
     if scene == 1.33 and event.type == pygame.MOUSEBUTTONDOWN:
-        '''
-        livingRoomScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(livingRoomScene, (0,0))
+        davidCouch = pygame.image.load('david and couch_1.jpg')
+        screen.blit(davidCouch, (0,0))
         pygame.display.update()
-        '''
         dialogue("What was her name again?", you)
         scene = 1.34
         pygame.draw.rect(screen, (255, 255, 255), claire)
@@ -371,7 +371,7 @@ while not done:
 
     # cactus scene
     if scene == 1.5 and event.type == pygame.MOUSEBUTTONUP:
-        cactusScene = pygame.image.load('water for David_1.jpg')
+        cactusScene = pygame.image.load('water for David Jr_1.jpg')
         screen.blit(cactusScene, (0,0))
         pygame.display.update()
         dialogue("Here you go, David Jr. You look thirsty.", you)
@@ -623,7 +623,6 @@ while not done:
         honeymoon = pygame.image.load('back from the honeymoon_1.jpg')
         screen.blit(honeymoon, (0,0))
         pygame.display.update()
-        screen.fill((0, 0, 0))
         dialogue("Mom! We’re back!", david)
         scene = 2.12
     if scene == 2.12 and event.type == pygame.MOUSEBUTTONUP:
@@ -659,8 +658,9 @@ while not done:
 
     # ACT2SCENE2(2.2)
     if scene == 2.2 and event.type == pygame.MOUSEBUTTONUP:
-        # david at door
-        screen.fill((0, 0, 0))
+        davidDoor = pygame.image.load('david and the door_1.jpg')
+        screen.blit(davidDoor, (0, 0))
+        pygame.display.update()
         dialogue("Mom, where are you going?", david)
         scene = 2.21
     if scene == 2.21 and event.type == pygame.MOUSEBUTTONDOWN:
@@ -761,11 +761,9 @@ while not done:
         dialogue("Ok… David should be here any moment now.", kristyanne)
         scene = 2.25196
     if scene == 2.25196 and event.type == pygame.MOUSEBUTTONDOWN:
-        '''
-        davAndKA = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(davAndKA, (0,0))
+        davidAndKA = pygame.image.load('david and ka and couch_1.jpg')
+        screen.blit(davidAndKA, (0, 0))
         pygame.display.update()
-        '''
         dialogue("I’m home!", david)
         scene = 2.25197
     if scene == 2.25197 and event.type == pygame.MOUSEBUTTONUP:
@@ -787,16 +785,15 @@ while not done:
         dialogue("Of course, dear.", david)
         scene = 2.25184
     if scene == 2.25184 and event.type == pygame.MOUSEBUTTONUP:
-        # empty couch
-        screen.fill((0, 0, 0))
+        empty = pygame.image.load('empty couch_1.jpg')
+        screen.blit(empty, (0, 0))
+        pygame.display.update()
         dialogue("David and Kristy-Anne walk into another room. I can’t hear the things they’re saying, but it probably has to do with my memory loss. Or maybe she is unhappy with the conversation we just had. Oh… I suppose it was a little uncalled for…", thought)
         scene = 2.25185
     if scene == 2.25185 and event.type == pygame.MOUSEBUTTONDOWN:
-        '''
-        doctorQuesScene = pygame.image.load('il_794xN.919742521_fmvi.jpg')
-        gameDisplay.blit(doctorQuesScene, (0,0))
+        davidCouch = pygame.image.load('david and couch_1.jpg')
+        screen.blit(davidCouch, (0, 0))
         pygame.display.update()
-        '''
         dialogue("Mom?", david)
         scene = 2.25186
     if scene == 2.25186 and event.type == pygame.MOUSEBUTTONUP:
@@ -948,6 +945,7 @@ while not done:
         screen.fill((0, 0, 0))
         scene=2.31
     if scene == 2.31 and event.type==pygame.MOUSEBUTTONDOWN:
+        honeymoon = pygame.image.load('back from the honeymoon_1.jpg')
         screen.blit(honeymoon, (0, 0))
         pygame.display.update()
         dialogue("Mom! Mom, we’re home! We have a son! Did you hear that? You have a grandson!",david)
@@ -982,7 +980,9 @@ while not done:
         dialogue("Ok, dear. I’ll leave you to rest.",david)
         scene=2.33
     if scene==2.33 and event.type==pygame.MOUSEBUTTONDOWN:
-        # david by door
+        davidDoor = pygame.image.load('david and the door_1.jpg')
+        screen.blit(davidDoor, (0, 0))
+        pygame.display.update()
         dialogue("Mom, are you alright?",david)
         scene=2.333
     if scene==2.333 and event.type==pygame.MOUSEBUTTONUP:
@@ -1160,7 +1160,8 @@ while not done:
         scene = 2.64
 
     if scene == 2.64 and event.type == pygame.MOUSEBUTTONUP:
-        # david living room
+        screen.blit(davidDoor, (0, 0))
+        pygame.display.update()
         dialogue("Mom? Did you call me?", david)
         scene = 2.65
 
@@ -1248,7 +1249,9 @@ while not done:
         scene = 2.76
 
     if scene == 2.76 and event.type == pygame.MOUSEBUTTONDOWN:
-        # empty couch
+        empty = pygame.image.load('emmpty couch_1.jpg')
+        screen.blit(empty, (0, 0))
+        pygame.display.update()
         dialogue("I’m sorry David. I must be such a huge burden on you… If only I could be a better mother…", thought)
         scene = 3
 
