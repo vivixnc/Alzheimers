@@ -1171,7 +1171,7 @@ while not done:
         scene = 2.64
 
     if scene == 2.64 and event.type == pygame.MOUSEBUTTONUP:
-        davidDoor = pygame.image.load('david and the door_1.jpg2')
+        davidDoor = pygame.image.load('david and the door_1.jpg')
         screen.blit(davidDoor, (0, 0))
         pygame.display.update()
         dialogue("Mom? Did you call me?", david)
@@ -1199,7 +1199,9 @@ while not done:
 
     # ACT2SCENE7(2.7)(SEONGA)
     if scene == 2.7 and event.type == pygame.MOUSEBUTTONUP:
-        # david and ellen
+        dande = pygame.image.load('meet ellen.jpg')
+        screen.blit(dande, (0, 0))
+        pygame.display.update()
         dialogue("Mom, I want you to meet someone.", david)
         scene = 2.71
 
@@ -1330,7 +1332,9 @@ while not done:
         scene = 3.21
 
     if scene == 3.21 and event.type == pygame.MOUSEBUTTONUP:
-        # david crying and jacob
+        crying2 = pygame.image.load('jacob crying david_1.jpg')
+        screen.blit(crying2, (0, 0))
+        pygame.display.update()
         dialogue("Dada, don’t cry…", jacob)
         scene = 3.22
 
@@ -1339,7 +1343,9 @@ while not done:
         scene = 3.23
 
     if scene == 3.23 and event.type == pygame.MOUSEBUTTONUP:
-        # ka, david crying, and jacob
+        crying3 = pygame.image.load('everyone crying_1.jpg')
+        screen.blit(crying3, (0, 0))
+        pygame.display.update()
         dialogue("David, don’t say that. It’s because she’s your mom.", unknown)
         scene = 3.24
 
@@ -1364,7 +1370,9 @@ while not done:
         scene = 3.29
 
     if scene == 3.29 and event.type == pygame.MOUSEBUTTONUP:
-        # david in living room
+        crying = pygame.image.load('crying david_1.jpg')
+        screen.blit(crying, (0, 0))
+        pygame.display.update()
         dialogue("Footsteps walk away from where we are.", thought)
         scene = 3.211
 
