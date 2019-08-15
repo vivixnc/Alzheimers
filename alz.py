@@ -15,7 +15,7 @@ font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
 
 # sets scene to 0
-scene = 0.0
+scene = 4
 
 # words for opening page 56, 0, 113
 title = font1.render("Alzheimer's", True, (0, 0, 0))
@@ -109,7 +109,6 @@ while not done:
     mousePos = pygame.mouse.get_pos()
     # opening title screen
     if(scene == 0.0):
-        # screen.fill((0, 0, 0))
         opening = pygame.image.load('mmexport15657374020671.jpg')
         screen.blit(opening, (0,0))
         pygame.display.update()
@@ -155,18 +154,20 @@ while not done:
         screen.blit(no2, (295, 580))
         screen.blit(no3, (330, 600))
         pygame.display.update()
-        scene= 1.01
+        scene= 1.001
     # what happens when the player chooses yes
     # diagnosis
     if scene == 1.01 and yesDoc.collidepoint(mousePos) and event.type == pygame.MOUSEBUTTONUP:
+        screen.fill((0, 0, 0))
+        threeMonths = font2.render("Three months later", True, (255, 255, 255))
+        screen.blit(threeMonths, ((500 - threeMonths.get_width()) // 2, (600 - threeMonths.get_height()) // 2))
+        pygame.display.update()
+        scene = 1.001
+    if scene == 1.001 and event.type == pygame.MOUSEBUTTONDOWN:
         doctorScene = pygame.image.load('scene 2.png')
         screen.blit(doctorScene, (0,0))
         pygame.display.update()
-        dialogue("After testing, we can confirm that your mother has Alzheimer’s dementia.", doctor)
-        scene = 1.11
-    # medication
-    if scene == 1.11 and event.type == pygame.MOUSEBUTTONDOWN:
-        dialogue("As you may know, there is no cure for Alzheimer’s but there is medication to slow down the process.", doctor)
+        dialogue("After analyzing all the tests, we can confirm that your mother has Alzheimer’s dementia.", doctor)
         scene = 1.111
     # leaving doctor's office
     if scene == 1.111 and event.type == pygame.MOUSEBUTTONUP:
@@ -480,6 +481,7 @@ while not done:
         scene = 1.64211
 
     if scene == 1.64211 and event.type == pygame.MOUSEBUTTONDOWN:
+        stoveScene = pygame.image.load('firing stove_1.jpg')
         screen.blit(stoveScene, (0, 0))
         pygame.display.update()
         dialogue("Kristy-Anne said she didn’t touch the stove.", david)
@@ -912,6 +914,7 @@ while not done:
         dialogue("Oh… I’ll get in the car.",you)
         scene=2.25314444
     if scene==2.25314444 and event.type==pygame.MOUSEBUTTONDOWN:
+        carScene = pygame.image.load('scene 3.png')
         screen.blit(carScene, (0, 0))
         pygame.display.update()
         dialogue("Thank you, mom. Let’s get you home.",david)
@@ -943,8 +946,6 @@ while not done:
         screen.fill((0, 0, 0))
         scene=2.31
     if scene == 2.31 and event.type==pygame.MOUSEBUTTONDOWN:
-        honeymoon = pygame.image.load('back from the honeymoon_1.jpg')
-        screen.blit(honeymoon, (0, 0))
         pygame.display.update()
         dialogue("Mom! Mom, we’re home! We have a son! Did you hear that? You have a grandson!",david)
         scene=2.311
@@ -1263,7 +1264,7 @@ while not done:
         scene = 2.76
 
     if scene == 2.76 and event.type == pygame.MOUSEBUTTONDOWN:
-        empty = pygame.image.load('emmpty couch_1.jpg')
+        empty = pygame.image.load('empty couch_1.jpg')
         screen.blit(empty, (0, 0))
         pygame.display.update()
         dialogue("I’m sorry David. I must be such a huge burden on you… If only I could be a better mother…", thought)
@@ -1419,7 +1420,7 @@ while not done:
         end1 = pygame.image.load('mmexport1565742125774.jpg')
         screen.blit(end1, (0,0))
         pygame.display.update()
-        dialogue("He is my son", thought)
+        dialogue("David", thought)
         scene = 3.36
 
     if scene == 3.36 and event.type == pygame.MOUSEBUTTONDOWN:
@@ -1445,7 +1446,7 @@ while not done:
     if scene == 4.1 and event.type == pygame.MOUSEBUTTONUP:
         screen.fill((0, 0, 0))
         ribbon = pygame.image.load('alzRibbon.png')
-        screen.blit(ribbon, ((500 - ribbon.get_width()) // 2, 290))
+        screen.blit(ribbon, ((500 - ribbon.get_width()) // 2, 330))
         credit = font2.render("Credits: ", True, (255, 255, 255))
         v = font2.render("Vivian Chen Lam",True, (255, 255, 255))
         se = font2.render("Seonga Oh", True, (255, 255, 255))
@@ -1454,12 +1455,12 @@ while not done:
         r = font2.render("Ronnie", True, (255, 255, 255))
         j = font2.render("Jess", True, (255, 255, 255))
         heart = font2.render("<3", True, (255, 0, 0))
-        screen.blit(credit, ((500 - credit.get_width()) // 2, 50))
-        screen.blit(v, ((500 - v.get_width()) // 2, 80))
-        screen.blit(se, ((500 - se.get_width()) // 2, 110))
-        screen.blit(sh, ((500 - sh.get_width()) // 2, 140))
-        screen.blit(spec, ((500 - spec.get_width()) // 2, 170))
-        screen.blit(r, ((500 - r.get_width()) // 2, 200))
-        screen.blit(j, ((500 - j.get_width()) // 2, 230))
-        screen.blit(heart, ((500 - heart.get_width()) // 2, 260))
+        screen.blit(credit, ((500 - credit.get_width()) // 2, 70))
+        screen.blit(v, ((500 - v.get_width()) // 2, 100))
+        screen.blit(se, ((500 - se.get_width()) // 2, 130))
+        screen.blit(sh, ((500 - sh.get_width()) // 2, 160))
+        screen.blit(spec, ((500 - spec.get_width()) // 2, 210))
+        screen.blit(r, ((500 - r.get_width()) // 2, 240))
+        screen.blit(j, ((500 - j.get_width()) // 2, 270))
+        screen.blit(heart, ((500 - heart.get_width()) // 2, 300))
         pygame.display.update()
