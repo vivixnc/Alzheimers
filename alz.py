@@ -1351,7 +1351,7 @@ while not done:
         scene = 3.24
 
     if scene == 3.24 and event.type == pygame.MOUSEBUTTONDOWN:
-        dialogue("Dada is sad because of grandma?", jacob)
+        dialogue("Dada is sad because of grandma?", unknown)
         scene = 3.25
 
     if scene == 3.25 and event.type == pygame.MOUSEBUTTONUP:
@@ -1363,7 +1363,7 @@ while not done:
         scene = 3.27
 
     if scene == 3.27 and event.type == pygame.MOUSEBUTTONUP:
-        dialogue("Ok mama… goodnight dada. I love you.", jacob)
+        dialogue("Ok mama… goodnight dada. I love you.", unknown)
         scene = 3.28
 
     if scene == 3.28 and event.type == pygame.MOUSEBUTTONDOWN:
