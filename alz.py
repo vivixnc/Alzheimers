@@ -14,8 +14,8 @@ font1 = pygame.font.SysFont("Monospace", 30)
 font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
 
-# sets scene to 0
-scene = 4
+# sets scene to 0.0
+scene = 0.0
 
 # words for opening page 56, 0, 113
 title = font1.render("Alzheimer's", True, (0, 0, 0))
