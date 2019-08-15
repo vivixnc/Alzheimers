@@ -15,7 +15,7 @@ font2 = pygame.font.SysFont("Monospace", 20)
 font3 = pygame.font.SysFont("Monospace", 15)
 
 # sets scene to 0
-scene = 2.5
+scene = 0.0
 
 # words for opening page 56, 0, 113
 title = font1.render("Alzheimer's", True, (0, 0, 0))
@@ -1280,8 +1280,9 @@ while not done:
 
     # ACT3SCENE1 (3.1)
     if scene == 3.1 and event.type == pygame.MOUSEBUTTONDOWN:
-        # david and wheelchair
-        screen.fill((0, 0, 0))
+        wheelchair = pygame.image.load('wheelchair.jpg')
+        screen.blit(wheelchair, (0, 0))
+        pygame.display.update()
         dialogue("Mom, I got you a wheelchair. It’ll be easier to move around.", david)
         scene = 3.12
 
